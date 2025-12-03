@@ -345,22 +345,21 @@ footer a{
    margin: 10px 0 15px 0;
  }
 
- #page-header{
-    background-image: url(../img/33.jpg);
+ #page-header{ 
+    background-image: url("../img/12.jpg");
     width: 100%;
-    height: 40vh;
+    height: 700px;
     background-size: cover;
     display: flex;
     text-align: center;
     justify-content: center;
-    padding: 14px;
-    
+    flex-direction: column;
+    padding: 14px;    
  }
 
  #page-header h2,
  #page-header p{
-    color: black;
-
+    color: white;
  }
 
  #pagination{
@@ -384,7 +383,7 @@ footer a{
     margin-top: 20px;
  }
  #prodetails .single-pro-image{
-    width: 40%;
+    width: 30%;
     margin-right: 50px;
  }
 
@@ -407,7 +406,7 @@ footer a{
  #prodetails .single-pro-details h4{
     padding: 40px 0 20px 0;
     color: #222;
-    font-size: 40px;
+    font-size: 18px;
  }
 
  #prodetails .single-pro-details h2{
