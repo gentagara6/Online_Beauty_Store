@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Era Beauty</title>
-    <link rel="stylesheet" href="css/jquery-ui.css">
+    <!-- <link rel="stylesheet" href="css/jquery-ui.css"> -->
 	<link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 </head>
@@ -27,29 +27,57 @@
     <section id="prodetails" class="section-p1">
 
         <div class="single-pro-image">
-            <img src="img/1.jpg" width="100%" id="MainImg" alt="">
+            <img src="" width="100%" id="MainImg" alt="Product Image">
             <div class="small-img-group">
-                <div class="small-img-col">
-                    <img src="img/13.png" width="100%" class="small-img" alt="">
-                </div>
-                <div class="small-img-col">
-                    <img src="img/14.png" width="100%" class="small-img" alt="">
-                </div>
-                <div class="small-img-col">
-                    <img src="img/15.png" width="100%" class="small-img" alt="">
-                </div>
-                <div class="small-img-col">
-                    <img src="img/16.png" width="100%" class="small-img" alt="">
-                </div>
+                <div class="small-img-col"> </div>
+                <div class="small-img-col"> </div>
+                <div class="small-img-col"> </div>
+                <div class="small-img-col"> </div>
             </div>
         </div>
 
         <div class="single-pro-details">
-            <h6>Home / Cream</h6>
-            <h4>Mighty Bamboo Panthenol Cream</h4>
-            <h2>$19.99</h2>
+            <h6 id="product-category">Home / Cream</h6>
+            <h4 id="product-name">Product Name</h4>
+            <h2 id="product-price">$0.00</h2>
+            <input type="number" value="1">
+            <button class="normal">Add To Cart</button>
+            <h4>Product Details</h4>
+            <span id="product-description">Product description will load here...</span>
+        </div>
+    </section>
+
+    <section class="shopping">
+      <h2>Featured Products</h2>
+      <div class="products">
+        <div class="product">
+          <img src="img/2.jpg" alt="Product 3">
+          <h3>Hydro Soothing Cream</h3>
+          <p>$29.99</p>
+          <button>Add to Cart</button>
         </div>
 
+        <div class="product">
+          <img src="img/3.jpg" alt="Product 3">
+          <h3>Relief Cream</h3>
+          <p>$29.99</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <div class="product">
+          <img src="img/4.jpg" alt="Product 3">
+          <h3>Centella Ampoule</h3>
+          <p>$29.99</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <div class="product">
+          <img src="img/5.jpg" alt="Product 3">
+          <h3>Sun Serum</h3>
+          <p>$29.99</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
     </section>
 
     <section id="newsletter">
@@ -93,11 +121,49 @@
         <li><a href="#">FAQs</a></li>
     </div>
     </section>
-   
 
+    <script src="js/sproducts.js"></script>
 
-    <script src="js/jquery.js"></script>
+    <script>
+        // Read ID from URL
+        const params = new URLSearchParams(window.location.search);
+        const productId = parseInt(params.get("id"));
+
+        // Find product from products.js
+        const product = products.find(p => p.id === productId);
+
+        if (product) {
+            document.getElementById("product-name").innerText = product.name;
+            document.getElementById("product-price").innerText = "$" + product.price;
+            document.getElementById("product-description").innerText = product.description;
+
+            // Main Image
+            document.getElementById("MainImg").src = product.img;
+
+            // Small Images
+            const group = document.querySelector(".small-img-group");
+            group.innerHTML = "";
+
+            product.images.forEach(src => {
+                group.innerHTML += `
+                    <div class="small-img-col">
+                        <img src="${src}" class="small-img">
+                    </div>
+                `;
+            });
+
+            // Click to switch image
+            document.addEventListener("click", function(e) {
+                if (e.target.classList.contains("small-img")) {
+                    document.getElementById("MainImg").src = e.target.src;
+                }
+            });
+        }
+    </script>
+
+    <!-- <script src="js/jquery.js"></script>
     <script src="js/jquery-ui.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js"></script> -->
+
 </body>
 </html>
