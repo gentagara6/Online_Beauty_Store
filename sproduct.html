@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Era Beauty</title>
+    <!-- <link rel="stylesheet" href="css/jquery-ui.css"> -->
+	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+
+    <section id="header">
+        <a href="#" class="logo" alt=""><img src="img/Logofinale.jpg"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="shop.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html"><i class='bx bx-shopping-bag'></i></a></li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="prodetails" class="section-p1">
+
+        <div class="single-pro-image">
+            <img src="" width="100%" id="MainImg" alt="Product Image">
+            <div class="small-img-group">
+                <div class="small-img-col"> </div>
+                <div class="small-img-col"> </div>
+                <div class="small-img-col"> </div>
+                <div class="small-img-col"> </div>
+            </div>
+        </div>
+
+        <div class="single-pro-details">
+            <h6 id="product-category">Home / Cream</h6>
+            <h4 id="product-name">Product Name</h4>
+            <h2 id="product-price">$0.00</h2>
+            <input type="number" value="1">
+            <button class="normal">Add To Cart</button>
+            <h4>Product Details</h4>
+            <span id="product-description">Product description will load here...</span>
+        </div>
+    </section>
+
+    <section class="shopping">
+      <h2>Featured Products</h2>
+      <div class="products">
+        <div class="product">
+          <img src="img/2.jpg" alt="Product 3">
+          <h3>Hydro Soothing Cream</h3>
+          <p>$29.99</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <div class="product">
+          <img src="img/3.jpg" alt="Product 3">
+          <h3>Relief Cream</h3>
+          <p>$29.99</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <div class="product">
+          <img src="img/4.jpg" alt="Product 3">
+          <h3>Centella Ampoule</h3>
+          <p>$29.99</p>
+          <button>Add to Cart</button>
+        </div>
+
+        <div class="product">
+          <img src="img/5.jpg" alt="Product 3">
+          <h3>Sun Serum</h3>
+          <p>$29.99</p>
+          <button>Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="newsletter">
+    <div class="newstext">
+      <h4>Sign up for newsletter</h4>
+      <p>Get notification about everything new and <span>special offers!</span></p>
+    </div>
+
+    <div class="form">
+      <input type="text" placeholder="Your email Address">
+      <button class="normal">Sign up</button>
+    </div>
+    </section>
+
+    <section class="footer">
+	
+    <div class="contact-box">
+        <h4>My account</h4>
+        <li><a href="#">My account</a></li>
+        <li><a href="#">Checkout</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Shopping Cart</a></li>
+        <li><a href="#">Wishlist</a></li>
+    </div>
+ 
+    <div class="contact-box">
+        <h4>Quick Links</h4>
+        <li><a href="#">Store Location</a></li>
+        <li><a href="#">Orders Tracking</a></li>
+        <li><a href="#">Size guide</a></li>
+        <li><a href="#">My account</a></li>
+        <li><a href="#">FAQs</a></li>
+    </div>
+ 
+    <div class="contact-box">
+        <h4>Information</h4>
+        <li><a href="#">Privacy Page</a></li>
+        <li><a href="#">About use</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Delivery information</a></li>
+        <li><a href="#">FAQs</a></li>
+    </div>
+    </section>
+
+    <script src="js/sproducts.js"></script>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const productId = parseInt(params.get("id"));
+
+        const product = products.find(p => p.id === productId);
+
+        if (product) {
+            document.getElementById("product-name").innerText = product.name;
+            document.getElementById("product-price").innerText = "$" + product.price;
+            document.getElementById("product-description").innerText = product.description;
+
+            document.getElementById("MainImg").src = product.img;
+
+            const group = document.querySelector(".small-img-group");
+            group.innerHTML = "";
+
+            product.images.forEach(src => {
+                group.innerHTML += `
+                    <div class="small-img-col">
+                        <img src="${src}" class="small-img">
+                    </div>
+                `;
+            });
+
+            document.addEventListener("click", function(e) {
+                if (e.target.classList.contains("small-img")) {
+                    document.getElementById("MainImg").src = e.target.src;
+                }
+            });
+        }
+    </script>
+
+    <!-- <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/main.js"></script> -->
+
+</body>
+</html>
