@@ -129,7 +129,7 @@ button.normal{
 }
 
 #hero {
-   background-image: url(../img/hailey.jpg);
+   background-image: url(../img/cover_pic_1.avif);
     height: 120vh;
     width: 80%;
     display:flex;
@@ -346,9 +346,9 @@ footer a{
  }
 
  #page-header{ 
-    background-image: url("../img/12.jpg");
+    background-image: url("../img/cover_pic_2.jpg");
     width: 100%;
-    height: 700px;
+    height: 500px;
     background-size: cover;
     display: flex;
     text-align: center;
@@ -436,7 +436,8 @@ footer a{
  }
 
  #page-header.blog-header{
-    background-image: url(../img/img42.jpg);
+    background-image: url(../img/cover_pic_3.jpg);
+    /* height: 600px; */
  }
 
  #blog{
@@ -456,7 +457,7 @@ footer a{
     margin-right: 40px;
  }
  #blog img{
-    width: 100%;
+    width: 90%;
     height: 300px;
     object-fit: cover;
  }
