@@ -135,18 +135,6 @@ p{
   margin: 40px 0;
 }
 
-button.normal{
-  font-size: 14px;
-  font-weight: 600;
-  padding: 15px 30px;
-  color: black;
-  background-color:white;
-  border-radius: 4px;
-  border: none;
-  outline: none;
-  transition: 0.2s ease;
-}
-
 #navbar{
   display: flex;
   align-items: center;
@@ -1632,4 +1620,51 @@ body {
   font-size: 1.2em; 
   text-align: center;
   line-height: 1.5;
+}
+
+/*contact*/
+#page-header.contact-header{
+  background-image: url(../img/contact/4.png);
+}
+
+.people div {
+    display: flex;
+    align-items: flex-start;
+    padding-bottom: 25px;
+}
+
+.people img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.people p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 25px;
+    color: gray;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.people p span {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+button.normal{
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  color: white;
+  background-color: rgba(100, 50, 90, 1);
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  transition: 0.2s ease;
 }
