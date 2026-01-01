@@ -64,3 +64,13 @@ const products = [
     description: "The Toast Peptide Lip Tint by rhode is a nourishing lip formula that provides a hint of sheer, buildable color along with a rich, glossy finish. It's essentially a lip care product with the added benefit of a warm, sophisticated rose taupe hue."
 }
 ];
+
+const totalValue = products.reduce((sum, p) => sum + p.price, 0);
+console.log("Total shop value:", totalValue);
+
+const affordable = products.filter(p => p.price < 25);
+console.log("Affordable products:", affordable);
+
+const productNames = products.map(p => p.name.toUpperCase());
+console.log(productNames);
+
