@@ -56,3 +56,35 @@ $("#page-header p")
     800
   );
 
+$(document).ready(function () {
+
+  function revealBlogPosts() {
+    $("#blog .blog-box").each(function () {
+      const boxTop = $(this).offset().top;
+      const windowBottom = $(window).scrollTop() + $(window).height();
+
+      if (windowBottom > boxTop + 100) {
+        $(this).addClass("show");
+      }
+    });
+  }
+
+  $(window).on("scroll", revealBlogPosts);
+  revealBlogPosts(); 
+
+});
+
+$(".read-more").click(function (e) {
+  e.preventDefault();
+
+  const btn = $(this);
+  const moreText = btn.prev("p").find(".more-text");
+
+  if (btn.hasClass("open")) {
+    moreText.slideUp(300);
+    btn.removeClass("open").text("CONTINUE READING");
+  } else {
+    moreText.slideDown(300);
+    btn.addClass("open").text("SHOW LESS");
+  }
+});
