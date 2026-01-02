@@ -659,7 +659,7 @@ footer .install img {
 }
  
 #blog{
-  padding: 150px 150px 0 150px;
+  padding: 50px 150px 0 150px;
 }
 
 #blog .blog-box{
@@ -691,6 +691,7 @@ footer .install img {
   position: relative;
   transition: 0.3s;
 }
+
 #blog .blog-details a::after{
   content: "";
   width: 50px;
@@ -729,6 +730,32 @@ footer .install img {
 #blog .blog-details p {
   margin-bottom: 16px;
   line-height: 1.7;
+}
+.blog-box {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.blog-box.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.more-text {
+  display: none;
+}
+
+.blog-img {
+  overflow: hidden; 
+  border-radius: 12px;
+}
+
+.blog-img img {
+  transition: transform 0.5s ease; 
+}
+
+.blog-box:hover .blog-img img {
+  transform: scale(1.05); 
 }
 
 #page-header.about-header{
