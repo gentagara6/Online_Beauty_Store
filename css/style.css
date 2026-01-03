@@ -1089,11 +1089,6 @@ footer .install img {
   cursor: pointer;
 }
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
 #alert {
   position: fixed;
   bottom: 30px;
@@ -1341,7 +1336,7 @@ body {
   background-image: url(../img/contact/4.png);
 }
 
-<<<<<<< Updated upstream
+
 .people div {
     display: flex;
     align-items: flex-start;
@@ -1352,8 +1347,7 @@ body {
     width: 65px;
 }
 
-=======
->>>>>>> Stashed changes
+
 .people {
     display: flex;           
     gap: 20px;               
@@ -1405,11 +1399,7 @@ button.normal{
   outline: none;
   transition: 0.2s ease;
 }
-<<<<<<< Updated upstream
 
-=======
-/**/
->>>>>>> Stashed changes
 #hero::before,
 #banner::before,
 #sm-banner .banner-box::before,
@@ -1516,11 +1506,7 @@ button.normal{
 form { display: none; }
 form.active { display: block; }
 
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
->>>>>>> Stashed changes
 /* Base container adjustments for smaller screens */
 @media (max-width: 1200px) {
   .container {
@@ -1960,13 +1946,7 @@ html{
     font-size: 18px; 
   }
 }
-<<<<<<< Updated upstream
 
-
-
-=======
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
 /*about*/
 
 #page-header.about-header{
@@ -2245,7 +2225,7 @@ button.normal{
   border: none;
   outline: none;
   transition: 0.2s ease;
-=======
+}
 
 .cart-count {
     position: absolute;
@@ -2355,7 +2335,6 @@ button.normal{
 
 #orderNow:hover {
     opacity: 0.85;
->>>>>>> Stashed changes
 }
 
 .cart-count {
