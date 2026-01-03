@@ -25,6 +25,6 @@ Projekti është ndërtuar me:
 - CSS3 – Dizajn & layout
 - JavaScript – Ndërveprimet bazë, kryesisht librarine jQuery
 
-1. Klono këtë repository:
+Klono këtë repository:
    ```bash
    git clone https://github.com/gentagara6/Online_Beauty_Store.git
