@@ -126,3 +126,47 @@ cards.forEach(card => {
         card.style.transform = 'scale(1)'; // rikthehet madhësia normale
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const buttons = document.querySelectorAll(".add-to-cart");
+    const cartIcon = document.querySelector(".bx-shopping-bag");
+
+    // badge
+    const badge = document.createElement("span");
+    badge.className = "cart-count";
+    cartIcon.parentElement.style.position = "relative";
+    cartIcon.parentElement.appendChild(badge);
+
+    function normalize(name) {
+        return name.replace(/\s+/g, "_").toLowerCase();
+    }
+
+    function updateBadge() {
+        let total = 0;
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (key.startsWith("cart_")) {
+                total += Number(localStorage.getItem(key));
+            }
+        }
+        badge.textContent = total;
+        badge.style.display = total > 0 ? "inline-block" : "none";
+    }
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const product = btn.closest(".product");
+            const name = product.querySelector("h3").innerText;
+            const key = "cart_" + normalize(name);
+
+            let qty = localStorage.getItem(key);
+            qty = qty ? Number(qty) + 1 : 1;
+
+            localStorage.setItem(key, qty);
+            updateBadge();
+        });
+    });
+
+    updateBadge();
+});
+
