@@ -1089,6 +1089,11 @@ footer .install img {
   cursor: pointer;
 }
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
 #alert {
   position: fixed;
   bottom: 30px;
@@ -1336,6 +1341,7 @@ body {
   background-image: url(../img/contact/4.png);
 }
 
+<<<<<<< Updated upstream
 .people div {
     display: flex;
     align-items: flex-start;
@@ -1346,6 +1352,8 @@ body {
     width: 65px;
 }
 
+=======
+>>>>>>> Stashed changes
 .people {
     display: flex;           
     gap: 20px;               
@@ -1397,7 +1405,11 @@ button.normal{
   outline: none;
   transition: 0.2s ease;
 }
+<<<<<<< Updated upstream
 
+=======
+/**/
+>>>>>>> Stashed changes
 #hero::before,
 #banner::before,
 #sm-banner .banner-box::before,
@@ -1504,6 +1516,11 @@ button.normal{
 form { display: none; }
 form.active { display: block; }
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 /* Base container adjustments for smaller screens */
 @media (max-width: 1200px) {
   .container {
@@ -1943,9 +1960,13 @@ html{
     font-size: 18px; 
   }
 }
+<<<<<<< Updated upstream
 
 
 
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
 /*about*/
 
 #page-header.about-header{
@@ -2224,6 +2245,117 @@ button.normal{
   border: none;
   outline: none;
   transition: 0.2s ease;
+=======
+
+.cart-count {
+    position: absolute;
+    top: 0px;
+    right: -5px;
+    background: #000;
+    color: #fff;
+    font-size: 8px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 15px;
+    display: none;
+}
+
+/*CART TABLE */
+
+#cart {
+    margin-top: 40px;
+    overflow-x: auto;
+}
+
+#cart table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+#cart thead {
+    background: rgba(207, 198, 207, 0.9);
+}
+
+#cart thead td {
+    font-weight: 600;
+    padding: 15px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+#cart tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+#cart tbody td {
+    padding: 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#cart tbody td img {
+    width: 60px;
+}
+
+/* Quantity input */
+#cart input[type="number"] {
+    width: 60px;
+    padding: 6px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/*REMOVE BUTTON*/
+
+.remove-btn {
+    background: none;
+    border: 2px solid #000;
+    color: #000;
+    font-size: 14px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.remove-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* TOTAL + ORDER */
+
+#cart-total-box {
+    margin: 30px;
+    text-align: left;
+}
+
+#cart-total-box h3 {
+    font-weight: 900;
+}
+
+#page-header.cart-header{
+  background-image: url(../img/rhode2.jpeg);
+}
+
+#orderNow {
+    padding: 14px;
+    width: 100%;
+    background: rgb(27, 21, 21);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#orderNow:hover {
+    opacity: 0.85;
+>>>>>>> Stashed changes
 }
 
 .cart-count {
