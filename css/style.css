@@ -1355,15 +1355,14 @@ body {
 
 
 .people {
-    display: flex;           
-    gap: 20px;               
-    flex-wrap: wrap;         
+    display: flex;
+    flex-direction: column;
+    gap: 20px;              
     align-items: flex-start; 
     padding-bottom: 25px;
 }
 
 .people div {
-    flex: 1;                 
     display: flex;            
     align-items: center;      
     gap: 10px;                
