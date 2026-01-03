@@ -1843,6 +1843,86 @@ form.active { display: block; }
     font-size: 12px;
   }
 
+form { display: none; }
+form.active { display: block; }
+
+
+/* Bëjmë reset të bazës */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+#sm-banner {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #f5f5f5;
+  flex-wrap: wrap; /* për responsive */
+}
+
+
+.banner-box, .banner-box2 {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b); /* gradient modern */
+  color: black;
+  padding: 30px 20px;
+  border-radius: 15px;
+  text-align: center;
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+/* Efekt kur hover */
+.banner-box:hover, .banner-box2:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.banner-box h4, .banner-box2 h4 {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.banner-box h2, .banner-box2 h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.banner-box span, .banner-box2 span {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.banner-box button, .banner-box2 button {
+  padding: 10px 25px;
+  background-color: #fff;
+  color: #ff7e5f;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.banner-box button:hover, .banner-box2 button:hover {
+  background-color: #ff7e5f;
+  color: #fff;
+}
+
+/* Responsive për ekranet e vogla */
+@media (max-width: 700px) {
+  #sm-banner {
+    flex-direction: column;
+  }
+}
   .logo {
     font-size: 18px; 
   }
