@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
 }
 
 body{
@@ -426,7 +427,12 @@ img {
 
 #sm-banner {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #f5f5f5;
+  flex-wrap: wrap; /* për responsive */
 }
 
 #sm-banner h4 {
@@ -1926,4 +1932,61 @@ form.active { display: block; }
   .logo {
     font-size: 18px; 
   }
+}
+/* pjesa e re*/
+
+form { display: none; }
+form.active { display: block; }
+
+
+.banner-box, .banner-box2 {
+  background: linear-gradient(135deg, #eadcd8, #eae6ea); /* gradient modern */
+  color: #000;
+  padding: 30px 20px;
+  border-radius: 15px;
+  text-align: center;
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+/* Efekt kur hover */
+.banner-box:hover, .banner-box2:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+
+.banner-box h4, .banner-box2 h4 {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.banner-box h2, .banner-box2 h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.banner-box span, .banner-box2 span {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.banner-box button, .banner-box2 button {
+  padding: 10px 25px;
+  background-color: #ffffff;
+  color: #000;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.banner-box button:hover, .banner-box2 button:hover {
+  background-color: #e5bbb0;
+  color: #fff;
 }
