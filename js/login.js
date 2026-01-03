@@ -51,14 +51,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     localStorage.setItem("user", JSON.stringify({ email, password }));
 
-    document.getElementById("signup-msg").innerText =
-      "Account created. Please login.";
+    localStorage.setItem("isLoggedIn", "true");
 
-    signupForm.classList.remove("active");
-    loginForm.classList.add("active");
-    title.innerText = "Login";
+    modal.style.display = "none";
+    location.reload();
   });
-
 
 
   loginForm.addEventListener("submit", (e) => {
