@@ -1473,6 +1473,7 @@ footer .install img {
 }
 /*about*/
 
+
 #page-header.about-header{
         background-image: url("../img/rhode.avif");
         background-size: cover;        
@@ -1632,6 +1633,7 @@ html{
 .title {
   margin-top: 30px;
   color: #5a473a;
+  
 }
 * {
   margin: 0;
