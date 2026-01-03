@@ -794,7 +794,7 @@ footer .install img {
   height: 100%;
   border-radius: 20px;
 }
-
+/*contact*/
 #contact-details{
   display: flex;
   align-items: center;
@@ -803,6 +803,9 @@ footer .install img {
 
 #contact-details .details{
   width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 #contact-details .details span,
@@ -852,7 +855,8 @@ footer .install img {
   display: flex;
   justify-content: space-between;
   margin: 30px;
-  padding: 80px;border:1px solid black;
+  padding: 80px;
+  border:1px solid black;
 }
 
 #form-details form{
@@ -1340,6 +1344,26 @@ body {
 
 .people img {
     width: 65px;
+}
+
+.people {
+    display: flex;           
+    gap: 20px;               
+    flex-wrap: wrap;         
+    align-items: flex-start; 
+    padding-bottom: 25px;
+}
+
+.people div {
+    flex: 1;                 
+    display: flex;            
+    align-items: center;      
+    gap: 10px;                
+}
+
+.people img {
+    width: 65px;
+    display: inline;
     height: 65px;
     object-fit: cover;
     margin-right: 15px;
@@ -1479,7 +1503,6 @@ button.normal{
 
 form { display: none; }
 form.active { display: block; }
-
 
 /* Base container adjustments for smaller screens */
 @media (max-width: 1200px) {
@@ -1656,7 +1679,7 @@ html{
   #newsletter button {
     width: 100%;
   }
-}
+
 
 /* Mobile */
 @media (max-width: 576px) {
@@ -1919,4 +1942,397 @@ html{
   .logo {
     font-size: 18px; 
   }
+}
+
+
+
+/*about*/
+
+#page-header.about-header{
+        background-image: url("../img/rhode.avif");
+        background-size: cover;        
+        background-position: center;   
+        background-repeat: no-repeat;  
+        height: 400px; 
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;    
+        
+         display: flex;              
+        justify-content: center;    
+        align-items: center;        
+        flex-direction: column;
+        text-align: center;
+        color: white;               
+}
+.logo img{
+    width: 150px;
+    max-width: 100%;
+    height: auto;
+    opacity: 1;
+}
+html{
+  font-size:62.5%;
+  scroll-behavior:smooth;
+  scroll-padding-top:6rem;
+  overflow-x:hidden;
+}
+#header{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(90deg, #cfc6cf, #e6dfe4);
+    padding: 0 40px;
+    background-color: #CFC6CF;
+    box-shadow:0 4px 12px rgba(0,0,0,0.06) ;
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    height: 64px;
+    width: calc(100% - 32px);
+    margin: 12px auto 0;
+    border-radius: 24px;
+    backdrop-filter: blur(10px);
+    background: rgba(207, 198, 207, 0.9);
+}
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li{
+    list-style: none;
+    padding: 0 14px;
+    position: relative;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    color: #222222;
+    transition: 0.3s ease;
+    position: relative;
+    display: inline-block;
+    padding: 6px 4px;
+}
+
+#navbar li a:hover,
+#navbar li a.active{
+    color:#3C2A37;
+}
+
+#navbar li a.active::after{
+   content: "";
+   width: 0;
+   height: 2px;
+   background: #3C2A37;
+   position: absolute;
+   bottom: -4px;
+   left: 0;
+   transition: width 0.3s ease;
+  }
+
+#navbar li a:hover::after,
+#navbar li a.active::after {
+  width: 100%;
+}
+
+#page-header.about-header h2 {
+    font-size: 50px;            
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+#page-header.about-header p {
+    font-size: 20px;            
+    margin: 0;
+}
+
+
+#about-head {
+  position: relative;
+}
+
+#about-head{
+    display:flex;
+    align-items: center;
+}
+.image-wrapper {
+  padding: 20px 0;
+}
+
+#about-head img{
+    width: 50%;
+    height: auto;
+}
+#about-head div {
+    padding-left: 40px;
+    margin:20px;
+}
+
+#founder-note {
+    display: flex;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.founder-box {
+    background-color: #f3f1ee;
+    padding: 70px 80px;
+    border-radius: 15px;
+    width: 250 px;
+    height:500px;
+    
+    max-width: none;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.founder-box h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #555;
+    letter-spacing: 1px;
+}
+
+.founder-box p {
+    font-size: 20px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+.title {
+  margin-top: 30px;
+  color: #5a473a;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+}
+.title {
+  margin-top: 30px;
+  color: #5a473a;
+  text-align: center;
+}
+
+
+.cards {
+  display: flex;
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  gap: 20px;
+  width: 100vw; 
+  height: 100vh; 
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  flex: 1 1 45%; 
+  min-width: 300px; 
+  height: 300px; 
+  background-color: #f3f1ee;
+  border-radius: 10px;
+  padding: 40px; 
+  box-shadow: 0px 4px 16px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+}
+
+.card h3 {
+  font-size: 2em; 
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 1.2em; 
+  text-align: center;
+  line-height: 1.5;
+}
+
+/*contact*/
+#page-header.contact-header{
+  background-image: url(../img/contact/4.png);
+}
+
+.people {
+    margin-top: 50px;
+    display: flex;           
+    gap: 20px;               
+    flex-wrap: wrap;        
+    align-items: flex-start; 
+    padding-bottom: 25px;
+}
+
+.people div {
+    flex: 1;                 
+    display: flex;            
+    align-items: center;      
+    gap: 10px;                
+}
+
+
+.people img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.people p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 25px;
+    color: gray;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.people p span {
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+button.normal{
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  color: white;
+  background-color: rgba(100, 50, 90, 1);
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  transition: 0.2s ease;
+}
+
+.cart-count {
+    position: absolute;
+    top: 0px;
+    right: -5px;
+    background: #000;
+    color: #fff;
+    font-size: 8px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 15px;
+    display: none;
+}
+
+/*CART TABLE */
+
+#cart {
+    margin-top: 40px;
+    overflow-x: auto;
+}
+
+#cart table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+#cart thead {
+    background: rgba(207, 198, 207, 0.9);
+}
+
+#cart thead td {
+    font-weight: 600;
+    padding: 15px;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+#cart tbody tr {
+    border-bottom: 1px solid #ddd;
+}
+
+#cart tbody td {
+    padding: 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#cart tbody td img {
+    width: 60px;
+}
+
+/* Quantity input */
+#cart input[type="number"] {
+    width: 60px;
+    padding: 6px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+/*REMOVE BUTTON*/
+
+.remove-btn {
+    background: none;
+    border: 2px solid #000;
+    color: #000;
+    font-size: 14px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.remove-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+/* TOTAL  ORDER */
+
+#cart-total-box {
+    margin: 30px;
+    text-align: left;
+}
+
+#cart-total-box h3 {
+    font-weight: 900;
+}
+
+#page-header.cart-header{
+  background-image: url(../img/rhode2.jpeg);
+}
+
+#orderNow {
+    padding: 14px;
+    width: 100%;
+    background: rgb(27, 21, 21);
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#orderNow:hover {
+    opacity: 0.85;
+
 }
