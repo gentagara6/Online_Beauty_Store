@@ -2670,4 +2670,37 @@ button.normal{
     line-height: 15px;
 }
 
+.banner-box h4, .banner-box2 h4 {
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.banner-box h2, .banner-box2 h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.banner-box span, .banner-box2 span {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.banner-box button, .banner-box2 button {
+  padding: 10px 25px;
+  background-color: #ffffff;
+  color: #000;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.banner-box button:hover, .banner-box2 button:hover {
+  background-color: #e5bbb0;
+  color: #fff;
+  }
 
