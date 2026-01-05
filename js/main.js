@@ -111,19 +111,19 @@ $('#contactForm').on('submit', function(e) {
     //a
     const cards = document.querySelectorAll('.cards .card');
 
-// Për secilën kartë, shtojmë eventet për hover
+
 cards.forEach(card => {
-    // Kur kalon mausin mbi kartë
+    
     card.addEventListener('mouseenter', () => {
-        card.style.backgroundColor = '#d8cfc7'; // ngjyrë e lehtë blu
-        card.style.transform = 'scale(1.05)'; // pak enlarge efekt
-        card.style.transition = 'all 0.3s ease'; // tranzicion i butë
+        card.style.backgroundColor = '#d8cfc7'; 
+        card.style.transform = 'scale(1.05)'; 
+        card.style.transition = 'all 0.3s ease'; 
     });
 
-    // Kur largohet mausi
+    
     card.addEventListener('mouseleave', () => {
-        card.style.backgroundColor = ''; // rikthen ngjyrën origjinale
-        card.style.transform = 'scale(1)'; // rikthehet madhësia normale
+        card.style.backgroundColor = ''; 
+        card.style.transform = 'scale(1)'; 
     });
 });
 
