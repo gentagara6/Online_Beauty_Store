@@ -1,10 +1,12 @@
+<?php include '../includes/header.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glow Beauty</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -12,15 +14,15 @@
 <body>
     
     <section id="header">
-      <a href="index.html" class="logo">Glow <span>Beauty</span></a>        
+      <a href="index.php" class="logo">Glow <span>Beauty</span></a>        
         <div>
             <ul id="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a class="active" href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="cart.html"><i class='bx bx-shopping-bag'></i></a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="shop.php">Shop</a></li>
+                <li><a href="blog.php">Blog</a></li>
+                <li><a class="active" href="about.php">About</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="cart.php"><i class='bx bx-shopping-bag'></i></a></li>
             </ul>
         </div>
     </section>
@@ -33,7 +35,7 @@
     </section>
 
     <section id="about-head" class="section-p1">
-        <img src="img/rhode1.jpg" style="margin-top: 40px;" >
+        <img src="../assets/img/rhode1.jpg" style="margin-top: 40px;" >
     <div id="who">
         <h1>Who we are?</h1>
         <p>We are a skincare and beauty brand dedicated to creating thoughtful, high-quality products that nurture and enhance your natural beauty. We believe healthy skin is the foundation of confidence, and our mission is to make skincare simple, effective, and enjoyable.</p>
@@ -154,7 +156,9 @@
     </section>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
 
 </body>
 </html>
+
+<?php include '../includes/footer.php'; ?>

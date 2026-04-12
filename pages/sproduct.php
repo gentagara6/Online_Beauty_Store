@@ -1,25 +1,27 @@
+<?php include '../includes/header.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glow Beauty</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <section id="header">
-      <a href="index.html" class="logo">Glow <span>Beauty</span></a>        
+      <a href="index.php" class="logo">Glow <span>Beauty</span></a>        
         <div>
             <ul id="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a class="active" href="shop.html">Shop</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="cart.html"><i class='bx bx-shopping-bag'></i></a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a class="active" href="shop.php">Shop</a></li>
+                <li><a href="blog.php">Blog</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="cart.php"><i class='bx bx-shopping-bag'></i></a></li>
             </ul>
         </div>
     </section>
@@ -52,28 +54,28 @@
       <div class="products">
         
         <div class="product">
-          <img src="img/peptide_glazing_fluid.webp" alt="Product 3">
+          <img src="../assets/img/peptide_glazing_fluid.webp" alt="Product 3">
           <h3>Peptide Glazing Fluid</h3>
           <p>$32.00</p>
           <button class="add-to-cart">Add to Cart</button>
         </div>
 
         <div class="product">
-          <img src="img/lip_shape_set.webp" alt="Product 3">
+          <img src="../assets/img/lip_shape_set.webp" alt="Product 3">
           <h3>Peptide Lip Shape Set</h3>
           <p>$60.00</p>
           <button class="add-to-cart">Add to Cart</button>
         </div>
 
         <div class="product">
-          <img src="img/sprinkle_blush.webp" alt="Product 3">
+          <img src="../assets/img/sprinkle_blush.webp" alt="Product 3">
           <h3>Sprinkle Blush</h3>
           <p>$25.00</p>
           <button class="add-to-cart">Add to Cart</button>
         </div>
 
         <div class="product">
-          <img src="img/ribbon_lip_tint.webp" alt="Product 3">
+          <img src="../assets/img/ribbon_lip_tint.webp" alt="Product 3">
           <h3>Ribbon Lip Tint</h3>
           <p>$20.00</p>
           <button class="add-to-cart">Add to Cart</button>
@@ -96,11 +98,11 @@
     <section class="footer container">
         <div class="contact-box">
             <h4>My account</h4>
-            <li><a href="#">My account</a></li>
-            <li><a href="#">Checkout</a></li>
-            <li><a href="#">Contact us</a></li>
-            <li><a href="#">Shopping Cart</a></li>
-            <li><a href="#">Wishlist</a></li>
+            <li><a href="account.php">My account</a></li>
+            <li><a href="checkout.php">Checkout</a></li>
+            <li><a href="contact.php">Contact us</a></li>
+            <li><a href="cart.php">Shopping Cart</a></li>
+            <li><a href="wishlist.php">Wishlist</a></li>
         </div>
     
         <div class="contact-box">
@@ -127,7 +129,7 @@
     <div id="alert">Added to cart!</div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/sproducts.js"></script>
+    <script src="../assets/js/sproducts.js"></script>
 
     <script>
         const params = new URLSearchParams(window.location.search);
@@ -161,7 +163,9 @@
         }
     </script>
 
-    <script src="js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
 
 </body>
 </html>
+
+<?php include '../includes/footer.php'; ?>
