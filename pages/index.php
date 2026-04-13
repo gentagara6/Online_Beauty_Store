@@ -13,7 +13,7 @@
 
 <body>
 
-    <section id="header">
+    <!-- <section id="header">
       <a href="index.php" class="logo">Glow <span>Beauty</span></a>        
         <div>
             <ul id="navbar">
@@ -25,15 +25,15 @@
                 <li><a href="cart.php"><i class='bx bx-shopping-bag'></i></a></li>
             </ul>
         </div>
-    </section>
+    </section> -->
 
     <section  id="hero">
         <h4>Achieve<br>Glass Skin</h4>
         <p>The Best Products</p>
-        <button id="login-button">Login</button>
+        <a href="login.php"><button>Login</button></a>
     </section>
 
-    <div id="auth-modal" class="auth-modal">
+    <!-- <div id="auth-modal" class="auth-modal">
   <div class="auth-box">
     <span id="close-auth" class="close-btn">&times;</span>
 
@@ -52,9 +52,9 @@
       </p>
     </form>
 
-    <form id="login-form">
-      <input type="email" id="login-email" placeholder="Email" required>
-      <input type="password" id="login-password" placeholder="Password" required>
+    <form method="POST" action="login.php">
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" required>
       <button type="submit">Login</button>
       <p id="login-msg"></p>
 
@@ -65,7 +65,7 @@
     </form>
 
   </div>
-</div>
+</div> -->
 
     <section class="shopping container">
         <h2>Shop Our Products</h2>
