@@ -13,7 +13,7 @@
 
 <body>
     
-    <section id="header">
+    <!-- <section id="header">
       <a href="index.php" class="logo">Glow <span>Beauty</span></a>        
         <div>
             <ul id="navbar">
@@ -25,7 +25,7 @@
                 <li><a href="cart.php"><i class='bx bx-shopping-bag'></i></a></li>
             </ul>
         </div>
-    </section>
+    </section> -->
 
     <section id="page-header" class ="about-header">
 
@@ -106,7 +106,8 @@
     <p>Our vision is to become a trusted leader in skincare, empowering people worldwide to feel confident in their own skin. We aim to inspire healthy routines, promote self-care, and continually innovate to meet the evolving needs of our community.</p>
   </div>
 </div>
-/
+
+
 <section id="newsletter" class="container">
     <div class="newstext">
       <h4>Sign up for newsletter</h4>
@@ -122,8 +123,7 @@
 
     
 
-    <section class="footer container">
-	
+<section class="footer container">
     <div class="contact-box">
         <h4>Primary</h4>
         <li><a href="#">My account</a></li>

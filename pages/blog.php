@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <section id="header">
+    <!-- <section id="header">
       <a href="index.php" class="logo">Glow <span>Beauty</span></a>        
         <div>
             <ul id="navbar">
@@ -24,7 +24,7 @@
                 <li><a href="cart.php"><i class='bx bx-shopping-bag'></i></a></li>
             </ul>
         </div>
-    </section>
+    </section> -->
 
     <section  id="page-header" class="blog-header">
         <h2>#learnmore</h2>

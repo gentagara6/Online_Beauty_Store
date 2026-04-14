@@ -1,5 +1,9 @@
 <?php
-session_start();
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,11 +28,12 @@ session_start();
 
         <?php if(isset($_SESSION['user'])): ?>
             <li>Welcome, <?php echo $_SESSION['user']['email']; ?></li>
-            <li><a href="logout.php">Logout</a></li>
 
             <?php if($_SESSION['user']['role'] == 'admin'): ?>
-                <li><a href="#">Admin</a></li>
+                <li><a href="admin.php">Admin Panel</a></li>
             <?php endif; ?>
+
+            <li><a href="logout.php">Logout</a></li>
 
         <?php else: ?>
             <li><a href="login.php">Login</a></li>
