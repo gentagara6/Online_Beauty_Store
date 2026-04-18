@@ -10,7 +10,7 @@
 </head>
 <body>
 
- <section id="header">
+ <!-- <section id="header">
       <a href="index.php" class="logo">Glow <span>Beauty</span></a>        
         <div>
             <ul id="navbar">
@@ -22,7 +22,7 @@
                 <li><a class="active" href="cart.php"><i class='bx bx-shopping-bag'></i></a></li>
             </ul>
         </div>
-    </section>
+    </section> -->
 
     <section  id="page-header" class="cart-header">
         <h2>#cart</h2>
