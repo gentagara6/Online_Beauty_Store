@@ -1508,8 +1508,8 @@ button.normal{
   font-size: 13px;
 }
 
-form { display: none; }
-form.active { display: block; }
+.auth-modal form { display: none; }
+.auth-modal form.active { display: block; }
 
 
 
@@ -1915,8 +1915,8 @@ button.normal{
   font-size: 13px;
 }
 
-form { display: none; }
-form.active { display: block; }
+.auth-modal form { display: none; }
+.auth-modal form.active { display: block; }
 
 /* Base container adjustments for smaller screens */
 @media (max-width: 1200px) {
@@ -2765,8 +2765,8 @@ button.normal{
 
 /* pjesa e re*/
 
-form { display: none; }
-form.active { display: block; }
+.auth-modal form { display: none; }
+.auth-modal form.active { display: block; }
 
 
 .banner-box, .banner-box2 {

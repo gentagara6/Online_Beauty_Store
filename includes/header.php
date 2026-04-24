@@ -27,8 +27,6 @@ if (session_status() === PHP_SESSION_NONE) {
         <li><a href="cart.php"><i class='bx bx-shopping-bag'></i></a></li>
 
         <?php if(isset($_SESSION['user'])): ?>
-            <li>Welcome, <?php echo $_SESSION['user']['email']; ?></li>
-
             <?php if($_SESSION['user']['role'] == 'admin'): ?>
                 <li><a href="admin.php">Admin Panel</a></li>
             <?php endif; ?>
