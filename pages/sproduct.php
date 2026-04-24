@@ -95,41 +95,7 @@
     </div>
     </section>
 
-    <section class="footer container">
-        <div class="contact-box">
-            <h4>My account</h4>
-            <li><a href="account.php">My account</a></li>
-            <li><a href="checkout.php">Checkout</a></li>
-            <li><a href="contact.php">Contact us</a></li>
-            <li><a href="cart.php">Shopping Cart</a></li>
-            <li><a href="wishlist.php">Wishlist</a></li>
-        </div>
-    
-        <div class="contact-box">
-            <h4>Quick Links</h4>
-            <li><a href="#">Store Location</a></li>
-            <li><a href="#">Orders Tracking</a></li>
-            <li><a href="#">Size guide</a></li>
-            <li><a href="#">My account</a></li>
-            <li><a href="#">FAQs</a></li>
-        </div>
-    
-        <div class="contact-box">
-            <h4>Information</h4>
-            <li><a href="#">Privacy Page</a></li>
-            <li><a href="#">About use</a></li>
-            <li><a href="#">Careers</a></li>
-            <li><a href="#">Delivery information</a></li>
-            <li><a href="#">FAQs</a></li>
-        </div>
-        
-        <p id="year"></p>
-    </section>
-
     <div id="alert">Added to cart!</div>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="../assets/js/sproducts.js"></script>
 
     <script>
         const params = new URLSearchParams(window.location.search);
@@ -162,8 +128,6 @@
             });
         }
     </script>
-
-    <script src="../assets/js/main.js"></script>
 
 </body>
 </html>

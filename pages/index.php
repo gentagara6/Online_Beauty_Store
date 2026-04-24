@@ -1,4 +1,21 @@
-<?php include '../includes/header.php'; ?>
+<?php include '../includes/header.php'; ?> 
+
+<?php if (isset($_GET['res']) && isset($_SESSION['user'])): ?>
+    <?php if ($_GET['res'] == "welcome"): ?>
+        <p id="welcome-message" style="color:green; text-align:center; font-size:16px; margin:20px;">
+            Welcome <?php echo htmlspecialchars($_SESSION['user']['email']); ?>
+        </p>
+    <?php endif; ?>
+
+    <script>
+        setTimeout(function () {
+            const msg = document.getElementById("welcome-message");
+            if (msg) msg.style.display = "none";
+
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }, 3000);
+    </script>
+<?php endif; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -121,7 +138,7 @@
           </div>
 
           <div class="product">
-            <img src="../assets/img/toast_lip_tint.webp" alt="Product 3">
+            <img src="../assets/img/toast_liptint.webp" alt="Product 3">
             <h3>Toast Lip Tint</h3>
             <p>$20.00</p>
             <button class="add-to-cart">Add to Cart</button>
@@ -229,46 +246,8 @@
     </div>
     </section>
 
-    <section class="footer container">
-	
-    <div class="contact-box">
-        <h4>Primary</h4>
-        <li><a href="#">My account</a></li>
-        <li><a href="shop.php">Shopping</a></li>
-        <li><a href="contact.php">Contact us</a></li>
-        <li><a href="cart.php">Shopping Cart</a></li>
-        <li><a href="blog.php">Blog Page</a></li>
-    </div>
- 
-    <div class="contact-box">
-        <h4>Quick Links</h4>
-        <li><a href="contact.php#contact-details">Store Location</a></li>
-        <li><a href="contact.php#form-details">Leave a Message</a></li>
-        <li><a href="shop.php#new">New Arrivals</a></li>
-        <li><a href="about.php#who">Who we are</a></li>
-        <li><a href="blog.php#blog">Latest Blog Post</a></li>
-    </div>
- 
-    <div class="contact-box"> 
-        <h4>Information</h4>
-        <li><a href="#">Privacy Page</a></li>
-        <li><a href="#">About use</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Delivery information</a></li>
-        <li><a href="#">FAQs</a></li>
-    </div>
-    
-    <p id="year"></p>
-
-    </section>
-   
     <div id="alert">Added to cart!</div>
 
-
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/login.js"></script>
 </body>
 </html>
 

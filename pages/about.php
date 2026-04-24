@@ -121,43 +121,6 @@
     </div>
     </section>
 
-    
-
-<section class="footer container">
-    <div class="contact-box">
-        <h4>Primary</h4>
-        <li><a href="#">My account</a></li>
-        <li><a href="shop.html">Shopping</a></li>
-        <li><a href="contact.html">Contact us</a></li>
-        <li><a href="cart.html">Shopping Cart</a></li>
-        <li><a href="blog.html">Blog Page</a></li>
-    </div>
- 
-    <div class="contact-box">
-        <h4>Quick Links</h4>
-        <li><a href="contact.html#contact-details">Store Location</a></li>
-        <li><a href="contact.html#form-details">Leave a Message</a></li>
-        <li><a href="shop.html#new">New Arrivals</a></li>
-        <li><a href="about.html#who">Who we are</a></li>
-        <li><a href="blog.html#blog">Latest Blog Post</a></li>
-    </div>
- 
-    <div class="contact-box"> 
-        <h4>Information</h4>
-        <li><a href="#">Privacy Page</a></li>
-        <li><a href="#">About use</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Delivery information</a></li>
-        <li><a href="#">FAQs</a></li>
-    </div>
-    
-    <p id="year"></p>
-
-    </section>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="../assets/js/main.js"></script>
-
 </body>
 </html>
 
