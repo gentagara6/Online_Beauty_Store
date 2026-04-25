@@ -295,7 +295,6 @@ section .nutrition-card img {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 30px;
-  align-items: stretch;
   justify-items: center;
 }
   
@@ -305,20 +304,14 @@ section .nutrition-card img {
   border-radius: 20px;
   box-shadow: 0 12px 30px rgba(60, 42, 55, 0.12);
   padding: 18px;
-
-  width: 100%;
+  width: 220px;
   height: 360px;
-
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  justify-content: space-between;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product button{
-  margin-top: auto;
 }
   
 .product:hover {
@@ -2827,4 +2820,3 @@ button.normal{
   color: #fff;
   }
 
- 

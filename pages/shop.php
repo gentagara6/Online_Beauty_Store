@@ -1,30 +1,5 @@
 <?php include '../includes/header.php'; ?>
 
-<?php
-require_once '../classes/product.php';
-require_once '../classes/makeupproduct.php';
-
-// create dummy products
-$products = [
-    new Product("Glazing Milk", 32, "Skincare","glazing_milk.webp"),
-    new Product("Barrier Restore Cream", 32, "Skincare","barrier_restore_cream.webp"),
-    new Product("Peptide Glazing Fluid",32,"Skincare","peptide_glazing_fluid.webp"),
-    new Product("Pineapple Cleanser",30,"Skincare","pineapple_refresh.webp"),
-    new MakeupProduct("Espresso Lip Tint",20,"Makeup","Brown","espresso_lip_tint.webp"),
-    new MakeupProduct("Raspberry Jelly Lip Tint", 20, "Makeup", "Burgundy","rasberry_lip_tint.webp"),
-    new MakeupProduct("Ribbon Lip Tint", 20, "Makeup", "Light Pink","ribbon_lip_tint.webp"),
-    new MakeupProduct("Toast Lip Tint",20,"Makeup","Nude","toast_liptint.webp"),
-    new MakeupProduct("Sprinkle Blush", 25, "Makeup", "Pink", "sprinkle_blush.webp"),
-    new MakeupProduct("Sun Soak Blush", 25, "Makeup", "Red", "sun_soak_blush.webp"),
-    new MakeupProduct("Peptide Lip Shape", 24, "Makeup", "Pink", "peptide_lip_shape.webp"),
-    new MakeupProduct("Peptide Lip Shape Set", 60, "Makeup", "Multi-Color", "lip_shape_set.webp"),
-    new MakeupProduct("Scented Espresso Lip Tint", 20, "Makeup", "Brown", "scented_espresso_tint.webp"),
-    new MakeupProduct("Scented Raspberry Jelly Lip Tint", 20, "Makeup", "Burgundy", "scented_rj_tint.webp"),
-    new MakeupProduct("Scented Ribbon Lip Tint", 20, "Makeup", "Pink", "scented_ribbon_tint.webp"),
-    new MakeupProduct("Scented Toast Lip Tint", 20, "Makeup", "Nude", "scented_toast_tint.webp")
-];
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,22 +35,62 @@ $products = [
         <h2>Shop Our Products</h2>
 
         <div class="products">
-             <?php foreach(array_slice($products, 0, 8) as $index => $product): ?>
-        <div class="product" onclick="window.location.href='sproduct.php?id=<?php echo $index+1; ?>';">
 
-            <img src="../assets/img/<?php echo $product->getImage(); ?>" alt="product">
-
-            <h3><?php echo $product->getName(); ?></h3>
-
-            <p>$<?php echo $product->getPrice(); ?></p>
-
-            <?php if ($product instanceof MakeupProduct): ?>
-             <?php echo ' <small style="color:#777;">Shade: ' . $product->getShade() . '</small>'; ?>
-            <?php endif; ?>
-
+          <div class="product" onclick="window.location.href='sproduct.php?id=1';">
+            <img src="../assets/img/glazing_milk.webp" alt="Product 1">
+            <h3>Glazing Milk</h3>
+            <p>$32.00</p>
             <button class="add-to-cart">Add to Cart</button>
-        </div>
-        <?php endforeach; ?>
+          </div>
+
+          <div class="product" onclick="window.location.href='sproduct.php?id=2';">
+            <img src="../assets/img/barrier_restore_cream.webp" alt="Product 2">
+            <h3>Barrier Restore Cream</h3>
+            <p>$32.00</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+
+          <div class="product" onclick="window.location.href='sproduct.php?id=3';">
+            <img src="../assets/img/peptide_glazing_fluid.webp" alt="Product 3">
+            <h3>Peptide Glazing Fluid</h3>
+            <p>$32.00</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+
+          <div class="product" onclick="window.location.href='sproduct.php?id=4';">
+            <img src="../assets/img/pineapple_refresh.webp" alt="Product 4">
+            <h3>Pineapple Cleanser</h3>
+            <p>$30.00</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+
+          <div class="product" onclick="window.location.href='sproduct.php?id=5';">
+            <img src="../assets/img/espresso_lip_tint.webp" alt="Product 5">
+            <h3>Espresso Lip Tint</h3>
+            <p>$20.00</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+
+          <div class="product" onclick="window.location.href='sproduct.php?id=6';">
+            <img src="../assets/img/rasberry_lip_tint.webp" alt="Product 6">
+            <h3>Raspberry Jelly Lip Tint</h3>
+            <p>$20.00</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+
+          <div class="product" onclick="window.location.href='sproduct.php?id=7';">
+            <img src="../assets/img/ribbon_lip_tint.webp" alt="Product 7">
+            <h3>Ribbon Lip Tint</h3>
+            <p>$20.00</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
+
+          <div class="product" onclick="window.location.href='sproduct.php?id=8';">
+            <img src="../assets/img/toast_liptint.webp" alt="Product 8">
+            <h3>Toast Lip Tint</h3>
+            <p>$20.00</p>
+            <button class="add-to-cart">Add to Cart</button>
+          </div>
 
         </div>
     </section>
@@ -84,22 +99,63 @@ $products = [
       <h2>New arrivals</h2>
 
       <div class="products">
-         <?php foreach(array_slice($products, 8) as $index => $product): ?>
+
         <div class="product">
-
-            <img src="../assets/img/<?php echo $product->getImage(); ?>" alt="product">
-
-            <h3><?php echo $product->getName(); ?></h3>
-
-            <p>$<?php echo $product->getPrice(); ?></p>
-
-            <?php if ($product instanceof MakeupProduct): ?>
-              <?php echo ' <small style="color:#777;">Shade: ' . $product->getShade() . '</small>'; ?>
-             <?php endif; ?>
-
-            <button class="add-to-cart">Add to Cart</button>
+          <img src="../assets/img/sprinkle_blush.webp" alt="Product 1">
+          <h3>Sprinkle Blush</h3>
+          <p>$25.00</p>
+          <button class="add-to-cart">Add to Cart</button>
         </div>
-        <?php endforeach; ?>
+
+        <div class="product">
+          <img src="../assets/img/sun_soak_blush.webp" alt="Product 2">
+          <h3>Sun Soak Blush</h3>
+          <p>$25.00</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product">
+          <img src="../assets/img/peptide_lip_shape.webp" alt="Product 3">
+          <h3>Peptide Lip Shape</h3>
+          <p>$24.00</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product">
+          <img src="../assets/img/lip_shape_set.webp" alt="Product 3">
+          <h3>Peptide Lip Shape Set</h3>
+          <p>$60.00</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product">
+          <img src="../assets/img/scented_espresso_tint.webp" alt="Product 3">
+          <h3>Scented Espresso Lip Tint</h3>
+          <p>$20.00</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product">
+          <img src="../assets/img/scented_rj_tint.webp" alt="Product 3">
+          <h3>Scented Raspberry Jelly Lip Tint</h3>
+          <p>$20.00</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product">
+          <img src="../assets/img/scented_ribbon_tint.webp" alt="Product 3">
+          <h3>Scented Ribbon Lip Tint</h3>
+          <p>$20.00</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
+        <div class="product">
+          <img src="../assets/img/scented_toast_tint.webp" alt="Product 3">
+          <h3>Scented Toast Lip Tint</h3>
+          <p>$20.00</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+
       </div>
     </section>
     
