@@ -4,26 +4,26 @@
 require_once '../classes/product.php';
 require_once '../classes/makeupproduct.php';
 
-// create dummy products
-$products = [
-    new Product("Glazing Milk", 32, "Skincare","glazing_milk.webp"),
-    new Product("Barrier Restore Cream", 32, "Skincare","barrier_restore_cream.webp"),
-    new Product("Peptide Glazing Fluid",32,"Skincare","peptide_glazing_fluid.webp"),
-    new Product("Pineapple Cleanser",30,"Skincare","pineapple_refresh.webp"),
-    new MakeupProduct("Espresso Lip Tint",20,"Makeup","Brown","espresso_lip_tint.webp"),
-    new MakeupProduct("Raspberry Jelly Lip Tint", 20, "Makeup", "Burgundy","rasberry_lip_tint.webp"),
-    new MakeupProduct("Ribbon Lip Tint", 20, "Makeup", "Light Pink","ribbon_lip_tint.webp"),
-    new MakeupProduct("Toast Lip Tint",20,"Makeup","Nude","toast_liptint.webp"),
-    new MakeupProduct("Sprinkle Blush", 25, "Makeup", "Pink", "sprinkle_blush.webp"),
-    new MakeupProduct("Sun Soak Blush", 25, "Makeup", "Red", "sun_soak_blush.webp"),
-    new MakeupProduct("Peptide Lip Shape", 24, "Makeup", "Pink", "peptide_lip_shape.webp"),
-    new MakeupProduct("Peptide Lip Shape Set", 60, "Makeup", "Multi-Color", "lip_shape_set.webp"),
-    new MakeupProduct("Scented Espresso Lip Tint", 20, "Makeup", "Brown", "scented_espresso_tint.webp"),
-    new MakeupProduct("Scented Raspberry Jelly Lip Tint", 20, "Makeup", "Burgundy", "scented_rj_tint.webp"),
-    new MakeupProduct("Scented Ribbon Lip Tint", 20, "Makeup", "Pink", "scented_ribbon_tint.webp"),
-    new MakeupProduct("Scented Toast Lip Tint", 20, "Makeup", "Nude", "scented_toast_tint.webp")
-];
-?>
+// // create dummy products
+// $products = [
+//     new Product("Glazing Milk", 32, "Skincare","glazing_milk.webp"),
+//     new Product("Barrier Restore Cream", 32, "Skincare","barrier_restore_cream.webp"),
+//     new Product("Peptide Glazing Fluid",32,"Skincare","peptide_glazing_fluid.webp"),
+//     new Product("Pineapple Cleanser",30,"Skincare","pineapple_refresh.webp"),
+//     new MakeupProduct("Espresso Lip Tint",20,"Makeup","Brown","espresso_lip_tint.webp"),
+//     new MakeupProduct("Raspberry Jelly Lip Tint", 20, "Makeup", "Burgundy","rasberry_lip_tint.webp"),
+//     new MakeupProduct("Ribbon Lip Tint", 20, "Makeup", "Light Pink","ribbon_lip_tint.webp"),
+//     new MakeupProduct("Toast Lip Tint",20,"Makeup","Nude","toast_liptint.webp"),
+//     new MakeupProduct("Sprinkle Blush", 25, "Makeup", "Pink", "sprinkle_blush.webp"),
+//     new MakeupProduct("Sun Soak Blush", 25, "Makeup", "Red", "sun_soak_blush.webp"),
+//     new MakeupProduct("Peptide Lip Shape", 24, "Makeup", "Pink", "peptide_lip_shape.webp"),
+//     new MakeupProduct("Peptide Lip Shape Set", 60, "Makeup", "Multi-Color", "lip_shape_set.webp"),
+//     new MakeupProduct("Scented Espresso Lip Tint", 20, "Makeup", "Brown", "scented_espresso_tint.webp"),
+//     new MakeupProduct("Scented Raspberry Jelly Lip Tint", 20, "Makeup", "Burgundy", "scented_rj_tint.webp"),
+//     new MakeupProduct("Scented Ribbon Lip Tint", 20, "Makeup", "Pink", "scented_ribbon_tint.webp"),
+//     new MakeupProduct("Scented Toast Lip Tint", 20, "Makeup", "Nude", "scented_toast_tint.webp")
+// ];
+// ?>
 
 <!DOCTYPE html>
 <html lang="en">
