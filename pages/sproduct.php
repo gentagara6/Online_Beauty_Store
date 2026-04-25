@@ -97,6 +97,8 @@
 
     <div id="alert">Added to cart!</div>
 
+    <script src="../assets/js/sproducts.js"></script>
+
     <script>
         const params = new URLSearchParams(window.location.search);
         const productId = parseInt(params.get("id"));

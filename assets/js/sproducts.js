@@ -43,8 +43,8 @@ const products = [
     id: 6,
     name: "Raspberry Jelly Lip Tint",
     price: 20.00,
-    img: "../assets/img/raspberry_jelly_lip_tint.webp",
-    images: ["../assets/img/raspberry_jelly_lip_tint.webp", "../assets/img/sproducts/6-1.webp", "../assets/img/sproducts/6-2.webp", "../assets/img/sproducts/6-3.jpeg"],
+    img: "../assets/img/rasberry_lip_tint.webp",
+    images: ["../assets/img/rasberry_lip_tint.webp", "../assets/img/sproducts/6-1.webp", "../assets/img/sproducts/6-2.webp", "../assets/img/sproducts/6-3.jpeg"],
     description: "The Raspberry Jelly is a specific shade in the Peptide Lip Tint collection. It combines the deep nourishment of a lip treatment with a beautiful, sheer wash of color and a rich, glossy finish."
 },
 {
