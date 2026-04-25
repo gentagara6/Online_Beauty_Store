@@ -1,37 +1,56 @@
+<?php include '../includes/header.php'; ?> 
+
+<?php if (isset($_GET['res']) && isset($_SESSION['user'])): ?>
+    <?php if ($_GET['res'] == "welcome"): ?>
+        <p id="welcome-message" style="color:green; text-align:center; font-size:16px; margin:20px;">
+            Welcome <?php echo htmlspecialchars($_SESSION['user']['email']); ?>
+        </p>
+    <?php endif; ?>
+
+    <script>
+        setTimeout(function () {
+            const msg = document.getElementById("welcome-message");
+            if (msg) msg.style.display = "none";
+
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }, 3000);
+    </script>
+<?php endif; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glow Beauty</title>
-	  <link rel="stylesheet" href="css/style.css">
+	  <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <section id="header">
-      <a href="index.html" class="logo">Glow <span>Beauty</span></a>        
+    <!-- <section id="header">
+      <a href="index.php" class="logo">Glow <span>Beauty</span></a>        
         <div>
             <ul id="navbar">
-                <li><a class="active" href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="cart.html"><i class='bx bx-shopping-bag'></i></a></li>
+                <li><a class="active" href="index.php">Home</a></li>
+                <li><a href="shop.php">Shop</a></li>
+                <li><a href="blog.php">Blog</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="cart.php"><i class='bx bx-shopping-bag'></i></a></li>
             </ul>
         </div>
-    </section>
+    </section> -->
 
     <section  id="hero">
         <h4>Achieve<br>Glass Skin</h4>
         <p>The Best Products</p>
-        <button id="login-button">Login</button>
+        <a href="login.php"><button>Login</button></a>
     </section>
 
-    <div id="auth-modal" class="auth-modal">
+    <!-- <div id="auth-modal" class="auth-modal">
   <div class="auth-box">
     <span id="close-auth" class="close-btn">&times;</span>
 
@@ -50,9 +69,9 @@
       </p>
     </form>
 
-    <form id="login-form">
-      <input type="email" id="login-email" placeholder="Email" required>
-      <input type="password" id="login-password" placeholder="Password" required>
+    <form method="POST" action="login.php">
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" required>
       <button type="submit">Login</button>
       <p id="login-msg"></p>
 
@@ -63,63 +82,63 @@
     </form>
 
   </div>
-</div>
+</div> -->
 
     <section class="shopping container">
         <h2>Shop Our Products</h2>
         <div class="products">
 
           <div class="product">
-            <img src="img/glazing_milk.webp" alt="Product 1">
+            <img src="../assets/img/glazing_milk.webp" alt="Product 1">
             <h3>Glazing Milk</h3>
             <p>$32.00</p>
             <button class="add-to-cart">Add to Cart</button>
           </div>
 
           <div class="product">
-            <img src="img/barrier_restore_cream.webp" alt="Product 2">
+            <img src="../assets/img/barrier_restore_cream.webp" alt="Product 2">
             <h3>Barrier Restore Cream</h3>
             <p>$32.00</p>
             <button class="add-to-cart">Add to Cart</button>
           </div>
 
           <div class="product">
-            <img src="img/peptide_glazing_fluid.webp" alt="Product 3">
+            <img src="../assets/img/peptide_glazing_fluid.webp" alt="Product 3">
             <h3>Peptide Glazing Fluid</h3>
             <p>$32.00</p>
             <button class="add-to-cart">Add to Cart</button>
           </div>
 
           <div class="product">
-            <img src="img/pineapple_refresh.webp" alt="Product 3">
+            <img src="../assets/img/pineapple_refresh.webp" alt="Product 3">
             <h3>Pineapple Cleanser</h3>
             <p>$30.00</p>
             <button class="add-to-cart">Add to Cart</button>
           </div>
 
           <div class="product">
-            <img src="img/espresso_lip_tint.webp" alt="Product 3">
+            <img src="../assets/img/espresso_lip_tint.webp" alt="Product 3">
             <h3>Espresso Lip Tint</h3>
             <p>$20.00</p>
             <button class="add-to-cart">Add to Cart</button>
           </div>
 
           <div class="product">
-            <img src="img/rasberry_lip_tint.webp" alt="Product 3">
+            <img src="../assets/img/rasberry_lip_tint.webp" alt="Product 3">
             <h3>Raspberry Jelly Lip Tint</h3>
             <p>$20.00</p>
             <button class="add-to-cart">Add to Cart</button>
           </div>
 
           <div class="product">
-            <img src="img/ribbon_lip_tint.webp" alt="Product 3">
+            <img src="../assets/img/ribbon_lip_tint.webp" alt="Product 3">
             <h3>Ribbon Lip Tint</h3>
             <p>$20.00</p>
             <button class="add-to-cart">Add to Cart</button>
           </div>
 
           <div class="product">
-            <img src="img/toast_liptint.webp" alt="Product 3">
+            <img src="../assets/img/toast_liptint.webp" alt="Product 3">
             <h3>Toast Lip Tint</h3>
             <p>$20.00</p>
             <button class="add-to-cart">Add to Cart</button>
@@ -139,56 +158,56 @@
       <div class="products">
 
         <div class="product">
-          <img src="img/sprinkle_blush.webp" alt="Product 1">
+          <img src="../assets/img/sprinkle_blush.webp" alt="Product 1">
           <h3>Sprinkle Blush</h3>
           <p>$25.00</p>
           <button class="add-to-cart">Add to Cart</button>
         </div>
 
         <div class="product">
-          <img src="img/sun_soak_blush.webp" alt="Product 2">
+          <img src="../assets/img/sun_soak_blush.webp" alt="Product 2">
           <h3>Sun Soak Blush</h3>
           <p>$25.00</p>
           <button class="add-to-cart">Add to Cart</button>
         </div>
 
         <div class="product">
-          <img src="img/peptide_lip_shape.webp" alt="Product 3">
+          <img src="../assets/img/peptide_lip_shape.webp" alt="Product 3">
           <h3>Peptide Lip Shape</h3>
           <p>$24.00</p>
           <button class="add-to-cart">Add to Cart</button>
         </div>
 
         <div class="product">
-          <img src="img/lip_shape_set.webp" alt="Product 3">
+          <img src="../assets/img/lip_shape_set.webp" alt="Product 3">
           <h3>Peptide Lip Shape Set</h3>
           <p>$60.00</p>
           <button class="add-to-cart">Add to Cart</button>
         </div>
 
         <div class="product">
-          <img src="img/scented_espresso_tint.webp" alt="Product 3">
+          <img src="../assets/img/scented_espresso_tint.webp" alt="Product 3">
           <h3>Scented Espresso Lip Tint</h3>
           <p>$20.00</p>
           <button class="add-to-cart">Add to Cart</button>
         </div>
 
         <div class="product">
-          <img src="img/scented_rj_tint.webp" alt="Product 3">
+          <img src="../assets/img/scented_rj_tint.webp" alt="Product 3">
           <h3>Scented Raspberry Jelly Lip Tint</h3>
           <p>$20.00</p>
           <button class="add-to-cart">Add to Cart</button>
         </div>
 
         <div class="product">
-          <img src="img/scented_ribbon_tint.webp" alt="Product 3">
+          <img src="../assets/img/scented_ribbon_tint.webp" alt="Product 3">
           <h3>Scented Ribbon Lip Tint</h3>
           <p>$20.00</p>
           <button class="add-to-cart">Add to Cart</button>
         </div>
 
         <div class="product">
-          <img src="img/scented_toast_tint.webp" alt="Product 3">
+          <img src="../assets/img/scented_toast_tint.webp" alt="Product 3">
           <h3>Scented Toast Lip Tint</h3>
           <p>$20.00</p>
           <button class="add-to-cart">Add to Cart</button>
@@ -227,45 +246,9 @@
     </div>
     </section>
 
-    <section class="footer container">
-	
-    <div class="contact-box">
-        <h4>Primary</h4>
-        <li><a href="#">My account</a></li>
-        <li><a href="shop.html">Shopping</a></li>
-        <li><a href="contact.html">Contact us</a></li>
-        <li><a href="cart.html">Shopping Cart</a></li>
-        <li><a href="blog.html">Blog Page</a></li>
-    </div>
- 
-    <div class="contact-box">
-        <h4>Quick Links</h4>
-        <li><a href="contact.html#contact-details">Store Location</a></li>
-        <li><a href="contact.html#form-details">Leave a Message</a></li>
-        <li><a href="shop.html#new">New Arrivals</a></li>
-        <li><a href="about.html#who">Who we are</a></li>
-        <li><a href="blog.html#blog">Latest Blog Post</a></li>
-    </div>
- 
-    <div class="contact-box"> 
-        <h4>Information</h4>
-        <li><a href="#">Privacy Page</a></li>
-        <li><a href="#">About use</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Delivery information</a></li>
-        <li><a href="#">FAQs</a></li>
-    </div>
-    
-    <p id="year"></p>
-
-    </section>
-   
     <div id="alert">Added to cart!</div>
 
-
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/login.js"></script>
 </body>
 </html>
+
+<?php include '../includes/footer.php'; ?>

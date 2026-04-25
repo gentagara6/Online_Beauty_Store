@@ -1,29 +1,31 @@
+<?php include '../includes/header.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glow Beauty</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
     
-    <section id="header">
-      <a href="index.html" class="logo">Glow <span>Beauty</span></a>        
+    <!-- <section id="header">
+      <a href="index.php" class="logo">Glow <span>Beauty</span></a>        
         <div>
             <ul id="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a class="active" href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="cart.html"><i class='bx bx-shopping-bag'></i></a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="shop.php">Shop</a></li>
+                <li><a href="blog.php">Blog</a></li>
+                <li><a class="active" href="about.php">About</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="cart.php"><i class='bx bx-shopping-bag'></i></a></li>
             </ul>
         </div>
-    </section>
+    </section> -->
 
     <section id="page-header" class ="about-header">
 
@@ -33,7 +35,7 @@
     </section>
 
     <section id="about-head" class="section-p1">
-        <img src="img/rhode1.jpg" style="margin-top: 40px;" >
+        <img src="../assets/img/rhode1.jpg" style="margin-top: 40px;" >
     <div id="who">
         <h1>Who we are?</h1>
         <p>We are a skincare and beauty brand dedicated to creating thoughtful, high-quality products that nurture and enhance your natural beauty. We believe healthy skin is the foundation of confidence, and our mission is to make skincare simple, effective, and enjoyable.</p>
@@ -103,7 +105,8 @@
     <p>Our vision is to become a trusted leader in skincare, empowering people worldwide to feel confident in their own skin. We aim to inspire healthy routines, promote self-care, and continually innovate to meet the evolving needs of our community.</p>
   </div>
 </div>
-/
+
+
 <section id="newsletter" class="container">
     <div class="newstext">
       <h4>Sign up for newsletter</h4>
@@ -117,43 +120,7 @@
     </div>
     </section>
 
-    
-
-    <section class="footer container">
-	
-    <div class="contact-box">
-        <h4>Primary</h4>
-        <li><a href="#">My account</a></li>
-        <li><a href="shop.html">Shopping</a></li>
-        <li><a href="contact.html">Contact us</a></li>
-        <li><a href="cart.html">Shopping Cart</a></li>
-        <li><a href="blog.html">Blog Page</a></li>
-    </div>
- 
-    <div class="contact-box">
-        <h4>Quick Links</h4>
-        <li><a href="contact.html#contact-details">Store Location</a></li>
-        <li><a href="contact.html#form-details">Leave a Message</a></li>
-        <li><a href="shop.html#new">New Arrivals</a></li>
-        <li><a href="about.html#who">Who we are</a></li>
-        <li><a href="blog.html#blog">Latest Blog Post</a></li>
-    </div>
- 
-    <div class="contact-box"> 
-        <h4>Information</h4>
-        <li><a href="#">Privacy Page</a></li>
-        <li><a href="#">About use</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Delivery information</a></li>
-        <li><a href="#">FAQs</a></li>
-    </div>
-    
-    <p id="year"></p>
-
-    </section>
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/main.js"></script>
-
 </body>
 </html>
+
+<?php include '../includes/footer.php'; ?>

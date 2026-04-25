@@ -1,29 +1,31 @@
+<?php include '../includes/header.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Glow Beauty</title>
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 </head>
 
 <body>
-    <section id="header">
-      <a href="index.html" class="logo">Glow <span>Beauty</span></a>        
+    <!-- <section id="header">
+      <a href="index.php" class="logo">Glow <span>Beauty</span></a>        
         <div>
             <ul id="navbar">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a class="active" href="contact.html">Contact</a></li>
-                <li><a href="cart.html"><i class='bx bx-shopping-bag'></i></a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="shop.php">Shop</a></li>
+                <li><a href="blog.php">Blog</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a class="active" href="contact.php">Contact</a></li>
+                <li><a href="cart.php"><i class='bx bx-shopping-bag'></i></a></li>
             </ul>
         </div>
-    </section>
+    </section> -->
 
     <section  id="page-header" class="contact-header">
        <h2>#let's_talk</h2>
@@ -70,15 +72,15 @@
 
         <div class="people">
             <div>
-                <img src="img/people/1.png" alt="">
+                <img src="../assets/img/people/1.png" alt="">
                 <p><span>John Doe </span> Senior Marketing Manager <br> Phone: + 000 123 000 77 88 <br> Email: contact@example.com</p>
             </div>
             <div>
-                <img src="img/people/2.png" alt="">
+                <img src="../assets/img/people/2.png" alt="">
                 <p><span>William Smith</span> Senior Marketing Manager <br> Phone: + 000 123 000 77 88 <br> Email: contact@example.com</p>
             </div>
             <div>
-                <img src="img/people/3.png" alt="">
+                <img src="../assets/img/people/3.png" alt="">
                 <p><span>Emma Stone</span> Senior Marketing Manager <br> Phone: + 000 123 000 77 88 <br> Email: contact@example.com</p>
             </div>
         </div>
@@ -96,42 +98,7 @@
     </div>
     </section>
 
-    <section class="footer container">
-	
-    <div class="contact-box">
-        <h4>Primary</h4>
-        <li><a href="#">My account</a></li>
-        <li><a href="shop.html">Shopping</a></li>
-        <li><a href="contact.html">Contact us</a></li>
-        <li><a href="cart.html">Shopping Cart</a></li>
-        <li><a href="blog.html">Blog Page</a></li>
-    </div>
- 
-    <div class="contact-box">
-        <h4>Quick Links</h4>
-        <li><a href="contact.html#contact-details">Store Location</a></li>
-        <li><a href="contact.html#form-details">Leave a Message</a></li>
-        <li><a href="shop.html#new">New Arrivals</a></li>
-        <li><a href="about.html#who">Who we are</a></li>
-        <li><a href="blog.html#blog">Latest Blog Post</a></li>
-    </div>
- 
-    <div class="contact-box">
-        <h4>Information</h4>
-        <li><a href="#">Privacy Page</a></li>
-        <li><a href="#">About use</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Delivery information</a></li>
-        <li><a href="#">FAQs</a></li>
-    </div>
-
-    <p id="year"></p>
-    </section>
-   
-
-    <script src="js/sproducts.js"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="js/main.js"></script>
-
 </body>
 </html>
+
+<?php include '../includes/footer.php'; ?>
