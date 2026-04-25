@@ -1,5 +1,11 @@
 <?php include '../includes/header.php'; ?> 
 
+<?php
+require_once '../classes/product.php';
+require_once '../classes/makeupproduct.php';
+?>
+
+
 <?php if (isset($_GET['res']) && isset($_SESSION['user'])): ?>
     <?php if ($_GET['res'] == "welcome"): ?>
         <p id="welcome-message" style="color:green; text-align:center; font-size:16px; margin:20px;">
@@ -87,132 +93,41 @@
     <section class="shopping container">
         <h2>Shop Our Products</h2>
         <div class="products">
+          <?php
+           $products = [
+            new Product("Glazing Milk", 32, "Skincare", "glazing_milk.webp"),
+            new Product("Barrier Restore Cream", 32, "Skincare", "barrier_restore_cream.webp"),
+            new Product("Peptide Glazing Fluid", 32, "Skincare", "peptide_glazing_fluid.webp"),
+            new Product("Pineapple Cleanser", 30, "Skincare", "pineapple_refresh.webp"),
 
-          <div class="product">
-            <img src="../assets/img/glazing_milk.webp" alt="Product 1">
-            <h3>Glazing Milk</h3>
-            <p>$32.00</p>
-            <button class="add-to-cart">Add to Cart</button>
-          </div>
-
-          <div class="product">
-            <img src="../assets/img/barrier_restore_cream.webp" alt="Product 2">
-            <h3>Barrier Restore Cream</h3>
-            <p>$32.00</p>
-            <button class="add-to-cart">Add to Cart</button>
-          </div>
-
-          <div class="product">
-            <img src="../assets/img/peptide_glazing_fluid.webp" alt="Product 3">
-            <h3>Peptide Glazing Fluid</h3>
-            <p>$32.00</p>
-            <button class="add-to-cart">Add to Cart</button>
-          </div>
-
-          <div class="product">
-            <img src="../assets/img/pineapple_refresh.webp" alt="Product 3">
-            <h3>Pineapple Cleanser</h3>
-            <p>$30.00</p>
-            <button class="add-to-cart">Add to Cart</button>
-          </div>
-
-          <div class="product">
-            <img src="../assets/img/espresso_lip_tint.webp" alt="Product 3">
-            <h3>Espresso Lip Tint</h3>
-            <p>$20.00</p>
-            <button class="add-to-cart">Add to Cart</button>
-          </div>
-
-          <div class="product">
-            <img src="../assets/img/rasberry_lip_tint.webp" alt="Product 3">
-            <h3>Raspberry Jelly Lip Tint</h3>
-            <p>$20.00</p>
-            <button class="add-to-cart">Add to Cart</button>
-          </div>
-
-          <div class="product">
-            <img src="../assets/img/ribbon_lip_tint.webp" alt="Product 3">
-            <h3>Ribbon Lip Tint</h3>
-            <p>$20.00</p>
-            <button class="add-to-cart">Add to Cart</button>
-          </div>
-
-          <div class="product">
-            <img src="../assets/img/toast_liptint.webp" alt="Product 3">
-            <h3>Toast Lip Tint</h3>
-            <p>$20.00</p>
-            <button class="add-to-cart">Add to Cart</button>
-          </div>
-
-        </div>
-    </section>
-    
-    <section id="banner" class="container">
-        <h4>Curated Collection</h4>
-        <h2>Up to <span>70% off</span> all products</h2>
-        <button class="normal">Explore More</button>
-    </section>
-
-    <section class="shopping">
-      <h2>New arrivals</h2>
-      <div class="products">
+           new MakeupProduct("Espresso Lip Tint", 20, "Makeup", "Brown", "espresso_lip_tint.webp"),
+           new MakeupProduct("Raspberry Jelly Lip Tint", 20, "Makeup", "Burgundy", "rasberry_lip_tint.webp"),
+           new MakeupProduct("Ribbon Lip Tint", 20, "Makeup", "Light Pink", "ribbon_lip_tint.webp"),
+           new MakeupProduct("Toast Lip Tint", 20, "Makeup", "Nude", "toast_liptint.webp")
+                  ];
+           ?>
+        <?php foreach ($products as $product): ?>
 
         <div class="product">
-          <img src="../assets/img/sprinkle_blush.webp" alt="Product 1">
-          <h3>Sprinkle Blush</h3>
-          <p>$25.00</p>
-          <button class="add-to-cart">Add to Cart</button>
-        </div>
 
-        <div class="product">
-          <img src="../assets/img/sun_soak_blush.webp" alt="Product 2">
-          <h3>Sun Soak Blush</h3>
-          <p>$25.00</p>
-          <button class="add-to-cart">Add to Cart</button>
-        </div>
+        <img src="../assets/img/<?php echo $product->getImage(); ?>">
 
-        <div class="product">
-          <img src="../assets/img/peptide_lip_shape.webp" alt="Product 3">
-          <h3>Peptide Lip Shape</h3>
-          <p>$24.00</p>
-          <button class="add-to-cart">Add to Cart</button>
-        </div>
+       <h3><?php echo $product->getName(); ?></h3>
 
-        <div class="product">
-          <img src="../assets/img/lip_shape_set.webp" alt="Product 3">
-          <h3>Peptide Lip Shape Set</h3>
-          <p>$60.00</p>
-          <button class="add-to-cart">Add to Cart</button>
-        </div>
+        <p>$<?php echo $product->getPrice(); ?></p>
 
-        <div class="product">
-          <img src="../assets/img/scented_espresso_tint.webp" alt="Product 3">
-          <h3>Scented Espresso Lip Tint</h3>
-          <p>$20.00</p>
-          <button class="add-to-cart">Add to Cart</button>
-        </div>
 
-        <div class="product">
-          <img src="../assets/img/scented_rj_tint.webp" alt="Product 3">
-          <h3>Scented Raspberry Jelly Lip Tint</h3>
-          <p>$20.00</p>
-          <button class="add-to-cart">Add to Cart</button>
-        </div>
+           <?php if ($product instanceof MakeupProduct): ?>
+               <div class="shade">
+              Shade: <?php echo $product->getShade(); ?>
+               </div>
+        <?php endif; ?>
 
-        <div class="product">
-          <img src="../assets/img/scented_ribbon_tint.webp" alt="Product 3">
-          <h3>Scented Ribbon Lip Tint</h3>
-          <p>$20.00</p>
-          <button class="add-to-cart">Add to Cart</button>
-        </div>
+    <button class="add-to-cart">Add to Cart</button>
 
-        <div class="product">
-          <img src="../assets/img/scented_toast_tint.webp" alt="Product 3">
-          <h3>Scented Toast Lip Tint</h3>
-          <p>$20.00</p>
-          <button class="add-to-cart">Add to Cart</button>
-        </div>
+  </div>
 
+<?php endforeach; ?>
       </div>
     </section>
 

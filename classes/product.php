@@ -7,7 +7,7 @@ class Product {
     private $category;
     private $image;
     
-    //Konstruktori i klases
+    //Konstruktori i klases product
     public function __construct($name, $price, $category,$image) {
         $this->name = $name;
         $this->price = $price;

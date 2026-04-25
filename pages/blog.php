@@ -1,4 +1,10 @@
-<?php include '../includes/header.php'; ?>
+<?php include '../includes/header.php'; 
+
+require_once '../classes/BlogRepository.php';
+
+$repo = new BlogRepository();
+$posts = $repo->getPosts();
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,19 +18,6 @@
 </head>
 
 <body>
-    <!-- <section id="header">
-      <a href="index.php" class="logo">Glow <span>Beauty</span></a>        
-        <div>
-            <ul id="navbar">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="shop.php">Shop</a></li>
-                <li><a class="active" href="blog.php">Blog</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a href="contact.php">Contact</a></li>
-                <li><a href="cart.php"><i class='bx bx-shopping-bag'></i></a></li>
-            </ul>
-        </div>
-    </section> -->
 
     <section  id="page-header" class="blog-header">
         <h2>#learnmore</h2>
@@ -32,120 +25,37 @@
     </section>
 
     <section id="blog" class="container">
+      <?php foreach ($posts as $post): ?>
 
-      <div class="blog-box">
-         <div class="blog-img">
-           <img src="../assets/img/blog/b1.jpg" alt="">
-         </div>
+    <div class="blog-box">
 
-         <div class="blog-details">
-          <h4 style="color: black;">The perfect Lip Care Product for you</h4>
-          <p>The Rhode Peptide Lip Treatment is the perfect choice for your lip care products
-            <span class="more-text">
-                 enriched with peptides for hydration and shine. Its nourishing formula helps prevent dryness and keeps
-                  your lips soft throughout the day. With regular use, you'll notice smoother, fuller lips and a natural
-                   healthy glow. Perfect for all skin types and suitable for sensitive lips. Pair it with your favorite
-                    lip color for extra shine and protection.
-                 </span>
-          </p>
-          <a href="#" class="read-more">CONTINUE READING
-          </a>
-          <p> <a href="shop.php">Shop Now!</a></p>
-         </div>
+        <div class="blog-img">
+            <img src="<?= $post->image ?>" alt="">
+        </div>
 
-         <h1>22/12</h1>
+        <div class="blog-details">
 
-      </div>
-      <div class="blog-box">
-         <div class="blog-img">
-           <img src="../assets/img/blog/b-2.jpg" alt="">
-         </div>
+            <h4 style="color:black;">
+                <?= htmlspecialchars($post->title) ?>
+            </h4>
 
-         <div class="blog-details">
-          <h4 style="color: black;">The perfect Christmas gift for your loved ones! </h4>
-          <p>Get the beautiful Rhode Packet for your loved ones, full of beautiful surprises! 
-              <span class="more-text">
-                  Each packet is carefully curated with the most loved Rhode products,
-                  from lip care to skin essentials. The festive packaging makes it ideal for gifting
-                  and spreading holiday cheer. Surprise your family and friends with a gift that shows care
-                  and thoughtfulness. Perfect for anyone who loves beauty and self-care.
-               </span>
-          
-          </p>
-          <a href="#" class="read-more">CONTINUE READING
-          </a>
-          <p><a href="shop.php">Shop Now!</a></p>
-         </div>
+            <p>
+                <?= $post->shortText; ?>
+                <span class="more-text">
+                    <?= $post->fullText; ?>
+                </span>
+            </p>
 
-         <h1>21/12</h1>
-
-         </div>
-         <div class="blog-box">
-         <div class="blog-img">
-           <img src="../assets/img/blog/b3.jpg" alt="">
-         </div>
-
-         <div class="blog-details">
-          <h4 style="color: black;">Tate McRae for Rhode</h4>
-          <p>Beautiful Pop sensation Tate McRae stuns for Rhode, you can get all products at Glow Beauty.
-             <span class="more-text">
-                From shimmering lip treatments to radiant skin care, this collaboration highlights the must-have
-                 Rhode products. Join the trend and feel like a star with the collection inspired by Tate McRae. 
-                 Each item ensures a luxurious feel and long-lasting effect. Don’t miss out on owning the products 
-                 endorsed by one of pop’s rising icons.
-             </span>
-           </p>
-          <a href="#" class="read-more">CONTINUE READING
-          </a>
-          <p><a href="shop.php">Shop Now!</a> </p>
-         </div>
-
-         <h1>20/12</h1>
+            <a href="#" class="read-more">CONTINUE READING</a>
+            <p><a href="shop.php">Shop Now!</a></p>
 
         </div>
-        <div class="blog-box">
-         <div class="blog-img">
-           <img src="../assets/img/blog/b4.jpg" alt="">
-         </div>
 
-         <div class="blog-details">
-          <h4 style="color: black;">Get Rhode Beauty Now!</h4>
-          <p>Glow Beauty is an authorized reseller for Rhode Beauty! Get your products now!
-           <span class="more-text">
-            Rhode Beauty offers high-quality lip and skin care that everyone is talking about. 
-            From everyday essentials to limited edition collections, you can find everything here. 
-            Our stock is guaranteed authentic and ready to ship. Elevate your beauty routine with products
-             loved by makeup enthusiasts worldwide.
-            </span>
-          </p>
-          <a href="#" class="read-more">CONTINUE READING
-          </a>
-          <p><a href="shop.php">Shop Now!</a></p>
-         </div>
+        <h1><?= $post->date ?></h1>
 
-         <h1>19/12</h1>
+    </div>
 
-        </div><div class="blog-box">
-         <div class="blog-img">
-           <img src="../assets/img/blog/b5.jpg" alt="">
-         </div>
-
-         <div class="blog-details">
-          <h4 style="color: black;">The new Lip Care line is the perfect choice for you!</h4>
-          <p>Feel the most beautiful this holiday season by acquiring the perfect lip care kit by Rhode! 
-            <span class="more-text">
-             This complete set includes hydrating treatments, glosses, and balms enriched with vitamins. 
-             Keep your lips soft, plump, and radiant even in cold winter days. Ideal for gifting or personal indulgence.
-             Make your holiday season shine with lips that look and feel amazing every day.
-              </span>
-          </p>
-          <a href="#" class="read-more">CONTINUE READING</a>
-          <p><a href="shop.php">Shop Now!</a></p>
-         </div>
-
-         <h1>18/12</h1>
-
-         </div>
+<?php endforeach; ?>
     </section>
     
     <section id="newsletter" class="container">
