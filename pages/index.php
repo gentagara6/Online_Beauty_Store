@@ -1,19 +1,21 @@
 <?php include '../includes/header.php'; ?> 
 <?php
- $products = [
-    ["id"=>1, "name"=>"Glazing Milk","price"=>32,"image"=>"glazing_milk.webp"],
-    ["id"=>2, "name"=>"Barrier Restore Cream","price"=>32,"image"=>"barrier_restore_cream.webp"],
-    ["id"=>3, "name"=>"Peptide Glazing Fluid","price"=>32,"image"=>"peptide_glazing_fluid.webp"],
-    ["id"=>4, "name"=>"Pineapple Cleanser","price"=>30,"image"=>"pineapple_refresh.webp"],
-    ["id"=>5, "name"=>"Espresso Lip Tint","price"=>20,"image"=>"espresso_lip_tint.webp"],
-    ["id"=>6, "name"=>"Rasberry Jelly Lip Tint","price"=>20,"image"=>"rasberry_lip_tint.webp"],
-    ["id"=>7, "name"=>"Ribbon Lip Tint","price"=>20,"image"=>"ribbon_lip_tint.webp"],
-    ["id"=>8, "name"=>"Toast Lip Tint","price"=>20,"image"=>"toast_liptint.webp"]
-   ];
+require_once '../classes/product.php';
+require_once '../classes/makeupproduct.php';
 
-   usort($products,function ($a, $b) {
-    return $a['price'] <=> $b['price'];
-   });
+$products = [
+    new Product("Glazing Milk", 32,"Skincare", "glazing_milk.webp"),
+    new Product( "Barrier Restore Cream", 32,"Skincare", "barrier_restore_cream.webp"),
+    new Product( "Peptide Glazing Fluid", 32,"Skincare", "peptide_glazing_fluid.webp"),
+    new Product( "Pineapple Cleanser", 30,"Skincare", "pineapple_refresh.webp"),
+
+    new MakeupProduct( "Espresso Lip Tint", 20,"Makeup", "espresso_lip_tint.webp", "Brown"),
+    new MakeupProduct( "Raspberry Jelly Lip Tint", 20,"Makeup", "rasberry_lip_tint.webp", "Burgundy"),
+    new MakeupProduct( "Ribbon Lip Tint", 20,"Makeup", "ribbon_lip_tint.webp", "Pink"),
+    new MakeupProduct( "Toast Lip Tint", 20,"Makeup", "toast_liptint.webp", "Nude")
+];
+
+  
 
    $welcomeMessage=null;
    if(isset($_GET['res']) && isset($_SESSION['user'])){
@@ -51,27 +53,32 @@
         <h2>Shop Our Products</h2>
 
         <div class="products">
-          <?php 
-          foreach($products as $product):
-            if($product['price'] > 0):
-            ?>
 
-          <div class="product">
-            <img src="../assets/img/<?php echo $product['image']; ?>">
-           <h3><?php echo $product['name']; ?></h3>
-           <p>$<?php echo $product['price']; ?></p>
+       <?php foreach($products as $product): ?>
 
-           <?php if($product['price'] < 25): ?>
-            <span style="color:red;">Sale</span>
-            <?php endif; ?>
+         <?php if($product->getPrice() > 0): ?>
 
-            <button class="add-to-cart">Add to Cart</button>
-          </div>
+        <div class="product">
 
-          <?php endif; ?>
-          <?php endforeach; ?>
+    <img src="../assets/img/<?php echo $product->getImage(); ?>">
 
-        </div>
+    <h3><?php echo $product->getName(); ?></h3>
+
+    <p>$<?php echo $product->getPrice(); ?></p>
+
+    <?php if($product instanceof MakeupProduct): ?>
+        <small>Shade: <?php echo $product->getShade(); ?></small>
+    <?php endif; ?>
+
+    <button class="add-to-cart">Add to Cart</button>
+
+  </div>
+
+  <?php endif; ?>
+
+<?php endforeach; ?>
+
+</div>
     </section>
 
     <?php include '../includes/footer.php'; ?>

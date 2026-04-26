@@ -17,10 +17,10 @@
     ["name"=>"Sun Soak Blush","price"=>25,"image"=>"sun_soak_blush.webp"],
     ["name"=>"Peptide Lip Shape","price"=>24,"image"=>"peptide_lip_shape.webp"],
     ["name"=>"Peptide Lip Shape Set","price"=>60,"image"=>"lip_shape_set.webp"],
-    ["name"=>"Scented_toast_tint","price"=>20,"image"=>"scented_toast_tint.webp"],
-    ["name"=>"Scented_ribbon_tint","price"=>20,"image"=>"scented_ribbon_tint.webp"],
-    ["name"=>"Scented_rj_tint","price"=>22,"image"=>"scented_rj_tint.webp"],
-    ["name"=>"Scented_espresso_tint","price"=>23,"image"=>"scented_espresso_tint.webp"],
+    ["name"=>"Scented Toast Lip Tint","price"=>20,"image"=>"scented_toast_tint.webp"],
+    ["name"=>"Scented Ribbon Lip Tint","price"=>20,"image"=>"scented_ribbon_tint.webp"],
+    ["name"=>"Scented Raspberry Lip Tint","price"=>22,"image"=>"scented_rj_tint.webp"],
+    ["name"=>"Scented Espresso Lip Tint","price"=>23,"image"=>"scented_espresso_tint.webp"],
 
 ];
 
