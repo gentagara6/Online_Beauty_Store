@@ -37,33 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glow Beauty</title>
-	<link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
-</head>
-
-<body>
-    <!-- <section id="header">
-      <a href="index.php" class="logo">Glow <span>Beauty</span></a>        
-        <div>
-            <ul id="navbar">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="shop.php">Shop</a></li>
-                <li><a href="blog.php">Blog</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a class="active" href="contact.php">Contact</a></li>
-                <li><a href="cart.php"><i class='bx bx-shopping-bag'></i></a></li>
-            </ul>
-        </div>
-    </section> -->
-
     <section  id="page-header" class="contact-header">
        <h2>#let's_talk</h2>
         <p>LEAVE A MESSAGE, We love to hear from you!</p>
@@ -145,8 +118,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <button class="normal">Sign up</button>
     </div>
     </section>
-
-</body>
-</html>
 
 <?php include '../includes/footer.php'; ?>

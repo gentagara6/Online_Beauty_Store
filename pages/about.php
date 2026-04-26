@@ -1,41 +1,13 @@
 <?php include '../includes/header.php'; ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glow Beauty</title>
-	<link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-</head>
+<section id="page-header" class ="about-header">
+    <h2>#KnowUs</h2>
+    <p>Inspired by nature, designed for healthy, glowing skin.</p>
+</section>
 
-<body>
-    
-    <!-- <section id="header">
-      <a href="index.php" class="logo">Glow <span>Beauty</span></a>        
-        <div>
-            <ul id="navbar">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="shop.php">Shop</a></li>
-                <li><a href="blog.php">Blog</a></li>
-                <li><a class="active" href="about.php">About</a></li>
-                <li><a href="contact.php">Contact</a></li>
-                <li><a href="cart.php"><i class='bx bx-shopping-bag'></i></a></li>
-            </ul>
-        </div>
-    </section> -->
+<section id="about-head" class="section-p1">
+    <img src="../assets/img/rhode1.jpg" style="margin-top: 40px;" >
 
-    <section id="page-header" class ="about-header">
-
-        <h2>#KnowUs</h2>
-
-        <p>Inspired by nature, designed for healthy, glowing skin.</p>
-    </section>
-
-    <section id="about-head" class="section-p1">
-        <img src="../assets/img/rhode1.jpg" style="margin-top: 40px;" >
     <div id="who">
         <h1>Who we are?</h1>
         <p>We are a skincare and beauty brand dedicated to creating thoughtful, high-quality products that nurture and enhance your natural beauty. We believe healthy skin is the foundation of confidence, and our mission is to make skincare simple, effective, and enjoyable.</p>
@@ -49,24 +21,14 @@
         </abbr>
         
         <br><br>
+
         <marquee bgcolor="#ccc" loop="-1" scrollamount="5" width="100%">
             Radiant skin isn’t a miracle; it’s the result of consistent care, gentle ingredients, and a little love every day.
         </marquee>
     </div>
+</section>
 
-    <br><br>
-
-    <footer class="section-p1">
-
-    
-
-    
-    
-</body>
-
-    </section>
-
-    <section id="founder-note" class="section-p1">
+<section id="founder-note" class="section-p1">
     <div class="founder-box">
         <h3>A NOTE FROM OUR FOUNDER</h3>
 
@@ -76,8 +38,6 @@
 
         <p>
             Every product is thoughtfully crafted with intention, blending high-quality ingredients with careful formulation to support your skin, enhance your natural beauty, and make self-care feel like a true ritual. Beyond results, my goal has always been to create products that inspire a moment of calm, joy, and connection with yourself.It’s an honor to share these products with you and be part of your self-care journey. Thank you for trusting us to support and celebrate your natural beauty every day.
-            
-           
         </p>
     </div>
 </section>
@@ -118,9 +78,6 @@
       <button class="normal">Sign up</button>
 
     </div>
-    </section>
-
-</body>
-</html>
+</section>
 
 <?php include '../includes/footer.php'; ?>

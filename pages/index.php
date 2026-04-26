@@ -79,8 +79,8 @@ $products = [
 <?php endforeach; ?>
 
 </div>
-    </section>
+</section>
 
-    <?php include '../includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
 
         

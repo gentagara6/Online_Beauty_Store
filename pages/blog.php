@@ -7,26 +7,13 @@ $repo = new BlogRepository();
 $posts = $repo->getPosts();
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glow Beauty</title>
-	  <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-</head>
+<section  id="page-header" class="blog-header">
+    <h2>#learnmore</h2>
+    <p>Learn more about our beauty products</p>
+</section>
 
-<body>
-
-    <section  id="page-header" class="blog-header">
-        <h2>#learnmore</h2>
-        <p>Learn more about our beauty products</p>
-    </section>
-
-    <section id="blog" class="container">
-      <?php foreach ($posts as $post): ?>
+<section id="blog" class="container">
+    <?php foreach ($posts as $post): ?>
 
     <div class="blog-box">
 
@@ -57,9 +44,9 @@ $posts = $repo->getPosts();
     </div>
 
 <?php endforeach; ?>
-    </section>
+</section>
     
-    <section id="newsletter" class="container">
+<section id="newsletter" class="container">
     <div class="newstext">
       <h4>Sign up for newsletter</h4>
       <p>Get notification about everything new and <span>special offers!</span></p>
@@ -69,9 +56,6 @@ $posts = $repo->getPosts();
       <input type="text" placeholder="Your email Address">
       <button class="normal">Sign up</button>
     </div>
-    </section>
-
-</body>
-</html>
+</section>
 
 <?php include '../includes/footer.php'; ?>

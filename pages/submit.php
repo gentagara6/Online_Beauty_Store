@@ -36,7 +36,6 @@ $users = [
 
 if (isset($_POST['btnLogin'])) {
 
-    // Leximi i të dhënave me POST
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -44,13 +43,10 @@ if (isset($_POST['btnLogin'])) {
 
         if ($user['email'] === $email && $user['password'] === $password) {
 
-            // Ruajtja e user-it në SESSION
             $_SESSION['user'] = $user;
 
-            // Mesazh në SESSION
             $_SESSION['response'] = "Welcome " . $user['email'];
 
-            // Cookie për personalizim
             setcookie("welcomeUser", $user['email'], time() + 86400, "/");
 
             header("Location: index.php?res=welcome");
@@ -58,7 +54,6 @@ if (isset($_POST['btnLogin'])) {
         }
     }
 
-    // Nëse kredencialet janë gabim
     header("Location: login.php?res=invalid");
     exit;
 }
