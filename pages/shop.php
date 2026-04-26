@@ -36,7 +36,7 @@
         <h4>Your Skincare Routine Starts Here!</h4>
         <p>Explore our full collection</p>
     </section>
-<
+
     <section class="shopping container">
         <h2>Shop Our Products</h2>
 
