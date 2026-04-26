@@ -89,24 +89,7 @@ $(".read-more").click(function (e) {
   }
 });
 
-$('#contactForm').on('submit', function(e) {
-        const name = $('#name').val().trim();
-        const email = $('#email').val().trim();
-        const message = $('#message').val().trim();
 
-        if (name === '' || email === '' || message === '') {
-            e.preventDefault(); // ndalon dërgimin
-            alert('Ploteso te gjitha fushat e detyrueshme!');
-        } else if (!validateEmail(email)) {
-            e.preventDefault();
-            alert('Email i gabuar!');
-        }
-    });
-
-    function validateEmail(email) {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
-    }
 
     //a
     const cards = document.querySelectorAll('.cards .card');

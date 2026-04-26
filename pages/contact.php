@@ -1,4 +1,41 @@
-<?php include '../includes/header.php'; ?>
+<?php include '../includes/header.php'; 
+
+$statusMessage = "";
+$statusType = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $name = trim($_POST["name"]);
+    $email = trim($_POST["email"]);
+    $subject = trim($_POST["subject"]);
+    $message = trim($_POST["message"]);
+
+    
+    $nameValid = preg_match("/^[a-zA-Z\s]{2,50}$/", $name);
+   $emailValid = filter_var($email, FILTER_VALIDATE_EMAIL);
+    
+    if (!$nameValid && !$emailValid) {
+        $statusMessage = "Name and email are incorrect";
+        $statusType = "error";
+    }
+    elseif (!$nameValid) {
+        $statusMessage = "Invalid name";
+        $statusType = "error";
+    }
+    elseif (!$emailValid) {
+        $statusMessage = "Invalid email";
+        $statusType = "error";
+    }
+    elseif (empty($message)) {
+        $statusMessage = "Message cannot be empty";
+        $statusType = "error";
+    }
+    else {
+        $statusMessage = "Message sent successfully";
+        $statusType = "success";
+    }
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -60,11 +97,22 @@
     </section>
 
    <section id="form-details">
-    <form id="contactForm" action="" method="POST">
+    <form id="contactForm" action="contact.php" method="POST">
         <span>LEAVE A MESSAGE</span>
         <h2>We love to hear from you </h2>
+
+
+        <?php if (!empty($statusMessage)) { ?>
+    <p style="color: <?php echo ($statusType == "error") ? "red" : "green"; ?>; font-weight:bold;">
+        <?php echo $statusMessage; ?>
+    </p>
+<?php } ?>
+
+
+
+
         <input type="text" name="name" id="name" placeholder="Your Name" required>
-        <input type="email" name="email" id="email" placeholder="E-mail" required>
+        <input type="text" name="email" id="email" placeholder="E-mail" required>
         <input type="text" name="subject" id="subject" placeholder="Subject">
         <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
         <button type="submit" class="normal">Submit</button>
