@@ -64,6 +64,8 @@ Projekti demonstron konceptet bazë të PHP si:
 - Blog me OOP (BlogPost & Repository)
 - Visitor counter me file (visits.txt)
 - Mesazhe dinamike përmes GET (login, logout, errors)
+- Ruajtja e login-it me cookie (`loggedUser`)
+- Shfaqja e `lastLogin` dhe `loginCount` në navbar
 
 ---
 
@@ -121,7 +123,7 @@ Online_Beauty_Store/
 <img src="assets/screenshots/incorrect-login.png" width="500">
 <img src="assets/screenshots/welcome.png" width="500">
 <img src="assets/screenshots/logout.png" width="500">
-<img src="assets/screenshots/welcome-cookie.png" width="500">
+<img src="assets/screenshots/login-cookies.png" width="500">
 
 ### Admin Panel
 ##### Faqe vetëm për admin. Shfaq listën e shitjeve përmes arrays dhe llogarit total orders / total sales.  
