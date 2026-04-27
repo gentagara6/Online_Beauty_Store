@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     
     $nameValid = preg_match("/^[a-zA-Z\s]{2,50}$/", $name);
-   $emailValid = filter_var($email, FILTER_VALIDATE_EMAIL);
+    $emailValid = preg_match("/^[^\s@]+@[^\s@]+\.[^\s@]+$/", $email);
     
     if (!$nameValid && !$emailValid) {
         $statusMessage = "Name and email are incorrect";
