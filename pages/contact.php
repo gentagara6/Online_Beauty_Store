@@ -70,7 +70,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </section>
 
    <section id="form-details">
-    <form id="contactForm" action="contact.php" method="POST">
+    <form id="contactForm" action="contact.php#form-details" method="POST">
+   
         <span>LEAVE A MESSAGE</span>
         <h2>We love to hear from you </h2>
 
