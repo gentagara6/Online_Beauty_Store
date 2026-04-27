@@ -49,10 +49,20 @@ if (isset($_POST['btnLogin'])) {
         if ($user['email'] === $email && $user['password'] === $password) {
 
             $_SESSION['user'] = $user;
-
             $_SESSION['response'] = "Welcome " . $user['email'];
 
+            $_SESSION['last_login'] = date("Y-m-d H:i:s");
+
+            if (isset($_COOKIE['loginCount'])) {
+                $loginCount = (int)$_COOKIE['loginCount'] + 1;
+            } else {
+                $loginCount = 1;
+            }
+
             setcookie("welcomeUser", $user['email'], time() + 86400, "/");
+            setcookie("loggedUser", json_encode($user), time() + 86400, "/");
+            setcookie("lastLogin", $_SESSION['last_login'], time() + (7 * 86400), "/");
+            setcookie("loginCount", $loginCount, time() + (30 * 86400), "/");
 
             header("Location: index.php?res=welcome");
             exit;

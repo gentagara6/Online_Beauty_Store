@@ -4,6 +4,14 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+if (!isset($_SESSION['user']) && isset($_COOKIE['loggedUser'])) {
+    $_SESSION['user'] = json_decode($_COOKIE['loggedUser'], true);
+}
+
+$lastLogin = $_SESSION['last_login'] ?? ($_COOKIE['lastLogin'] ?? null);
+$loginCount = $_COOKIE['loginCount'] ?? null;
+
+
 ?>
 
 <!DOCTYPE html>
@@ -30,6 +38,18 @@ if (session_status() === PHP_SESSION_NONE) {
         <?php if(isset($_SESSION['user'])): ?>
             <?php if($_SESSION['user']['role'] == 'admin'): ?>
                 <li><a href="admin.php">Admin Panel</a></li>
+            <?php endif; ?>
+
+            <?php if ($lastLogin): ?>
+                <li style="font-size:12px; color:gray;">
+                    Last login: <?php echo htmlspecialchars($lastLogin); ?>
+                </li>
+            <?php endif; ?>
+
+            <?php if ($loginCount): ?>
+                <li style="font-size:12px; color:gray;">
+                    Logins: <?php echo htmlspecialchars($loginCount); ?>
+                </li>
             <?php endif; ?>
 
             <li><a href="logout.php">Logout</a></li>
