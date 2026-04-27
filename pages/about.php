@@ -1,3 +1,30 @@
+<?php session_start(); 
+
+$message = "";
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+  $email = $_POST['email'];
+
+  if(empty($email)){
+    $message = "please enter your email";
+
+  }
+  elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+    $message = "Invalid email";
+  }
+  else{
+    $message = "Successfully subscribed";
+  }
+}
+
+$file = "visits.txt";
+if(!file_exists($file)){
+    file_put_contents($file,0);
+}
+
+$visits = file_get_contents($file);
+$visits++;
+file_put_contents($file,$visits);
+?>
 <?php include '../includes/header.php'; ?>
 
 <section id="page-header" class ="about-header">
@@ -5,6 +32,9 @@
     <p>Inspired by nature, designed for healthy, glowing skin.</p>
 </section>
 
+<p style="text-align: center; margin-top:15px;">
+   👀 Visitors: <?php echo $visits; ?>
+</p>
 <section id="about-head" class="section-p1">
     <img src="../assets/img/rhode1.jpg" style="margin-top: 40px;" >
 
@@ -66,17 +96,23 @@
   </div>
 </div>
 
-
 <section id="newsletter" class="container">
     <div class="newstext">
-      <h4>Sign up for newsletter</h4>
-      <p>Get notification about everything new and <span>special offers!</span></p>
+        <h4>Sign up for newsletter</h4>
+        <p>Get notifications about new products and <span>special offers!</span></p>
     </div>
 
     <div class="form">
-      <input type="text" placeholder="Your email Address">
-      <button class="normal">Sign up</button>
+        <form method="POST">
+            <input type="text" name="email" placeholder="Your email Address">
+            <button class="normal">Sign up</button>
+        </form>
 
+        <?php if($message): ?>
+            <p style="margin-top:10px; color:green;">
+                <?php echo $message; ?>
+            </p>
+        <?php endif; ?>
     </div>
 </section>
 
