@@ -39,7 +39,7 @@ file_put_contents($file,$visits);
     <img src="../assets/img/rhode1.jpg" style="margin-top: 40px;" >
 
     <div id="who">
-        <h1>Who we are ?</h1>
+        <h1>Who we are?</h1>
         <p>We are a skincare and beauty brand dedicated to creating thoughtful, high-quality products that nurture and enhance your natural beauty. We believe healthy skin is the foundation of confidence, and our mission is to make skincare simple, effective, and enjoyable.</p>
 
         <p> Inspired by nature and supported by science, our formulations are crafted with carefully chosen ingredients that are gentle yet effective. We focus on delivering real results while respecting your skin’s unique needs.</p>
