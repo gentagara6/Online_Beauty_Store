@@ -87,6 +87,8 @@ $products = [
 </div>
 </section>
 
+<div id="alert">Added to cart!</div>
+
 <?php include '../includes/footer.php'; ?>
 
         

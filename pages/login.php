@@ -1,7 +1,5 @@
-<?php
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-}
+<?php 
+session_start(); 
 ?>
 
 <?php include '../includes/header.php'; ?>
@@ -17,6 +15,10 @@ if (session_status() === PHP_SESSION_NONE) {
         <?php elseif ($_GET['res'] == "invalid"): ?>
             <p id="login-message" style="color:red;">
                 Incorrect email or password. Please try again.
+            </p>
+        <?php elseif ($_GET['res'] == "invalid_email"): ?>
+            <p id="login-message" style="color:red;">
+                Invalid email format.
             </p>
         <?php endif; ?>
 
