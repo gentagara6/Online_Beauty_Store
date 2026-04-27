@@ -70,7 +70,13 @@ $products = [
         <small>Shade: <?php echo $product->getShade(); ?></small>
     <?php endif; ?>
 
-    <button class="add-to-cart">Add to Cart</button>
+    <button 
+  class="add-to-cart"
+  data-name="<?php echo $product->getName(); ?>"
+  data-price="<?php echo $product->getPrice(); ?>"
+>
+  Add to Cart
+</buttons>
 
   </div>
 
