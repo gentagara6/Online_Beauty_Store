@@ -70,6 +70,7 @@
                 <img src="../assets/img/<?php echo $p['image']; ?>">
                 <h3><?php echo $p['name']; ?></h3>
                 <p>$<?php echo $p['price']; ?></p>
+                <button class="add-to-cart">Add to Cart</button>
               </div>
               <?php endforeach; ?>
           
