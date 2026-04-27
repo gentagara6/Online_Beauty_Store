@@ -4,32 +4,32 @@ session_start();
 $users = [
     [
         "email" => "admin@test.com",
-        "password" => "1234",
+        "password" => "admin123",
         "role" => "admin"
     ],
     [
         "email" => "genta@test.com",
-        "password" => "1234",
+        "password" => "genta123",
         "role" => "user"
     ],
     [
         "email" => "ernesa@test.com",
-        "password" => "1234",
+        "password" => "ernesa123",
         "role" => "user"
     ],
     [
         "email" => "era@test.com",
-        "password" => "1234",
+        "password" => "era123",
         "role" => "user"
     ],
     [
         "email" => "enesa@test.com",
-        "password" => "1234",
+        "password" => "enesa123",
         "role" => "user"
     ],
     [
         "email" => "ermira@test.com",
-        "password" => "1234",
+        "password" => "ermira123",
         "role" => "user"
     ]
 ];

@@ -45,7 +45,7 @@ $products = [
 <section  id="hero">
     <h4>Achieve<br>Glass Skin</h4>
     <p>The Best Products</p>
-    <a href="login.php"><button>Login</button></a>
+    <!-- <a href="login.php"><button>Login</button></a> -->
 </section>
 
 

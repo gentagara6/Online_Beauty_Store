@@ -3,17 +3,14 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-//store that user visited cart page
 $_SESSION['last_visited_page'] = "cart.php";
 
-//count cart page visits
 if (!isset($_SESSION['cart_page_visits'])) {
     $_SESSION['cart_page_visits'] = 1;
 } else {
     $_SESSION['cart_page_visits']++;
 }
 
-//remember last cart visit for 30 days
 setcookie("last_cart_visit", date("Y-m-d H:i:s"), time() + (86400 * 30), "/");
 
 
