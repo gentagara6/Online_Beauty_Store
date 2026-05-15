@@ -6,72 +6,111 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] != 'admin') {
     exit;
 }
 
-$file = "../orders.json";
-$sales = [];
+$file = "../orders.txt";
+
+$orders = [];
+$orderCount = 0;
 
 if (file_exists($file)) {
-    $sales = json_decode(file_get_contents($file), true);
+
+    $content = file_get_contents($file);
+
+    $separatedOrders = explode("--------------------------", $content);
+
+    foreach ($separatedOrders as $orderText) {
+
+        $orderText = trim($orderText);
+
+        if (!empty($orderText)) {
+
+            $lines = explode("\n", $orderText);
+
+            $id = str_replace("Order ID: ", "", $lines[0] ?? "");
+            $customer = str_replace("Customer: ", "", $lines[1] ?? "");
+            $date = str_replace("Date: ", "", $lines[2] ?? "");
+
+            $orders[] = [
+                "id" => $id,
+                "customer" => $customer,
+                "date" => $date
+            ];
+        }
+    }
+
+    $orderCount = count($orders);
 }
-
-$total = 0;
-
-foreach ($sales as $sale) {
-    $total += $sale['total'];
-}
-
-$orderCount = count($sales);
 ?>
 
 <?php include '../includes/header.php'; ?>
 
 <section class="container" style="padding:40px;">
+
     <div style="text-align:center; margin-bottom:30px;">
         <h1>Admin Panel</h1>
         <p>Only administrators can access this page.</p>
     </div>
 
-    <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-bottom:30px;">
-        <div style="padding:20px; min-width:200px; background:#faf7f9; border-radius:15px; text-align:center;">
+    <div style="display:flex; justify-content:center; margin-bottom:30px;">
+        <div style="padding:20px; min-width:220px; background:#faf7f9; border-radius:15px; text-align:center;">
             <h3>Total Orders</h3>
-            <p style="font-size:22px; font-weight:bold;"><?php echo $orderCount; ?></p>
-        </div>
-
-        <div style="padding:20px; min-width:200px; background:#faf7f9; border-radius:15px; text-align:center;">
-            <h3>Total Sales</h3>
-            <p style="font-size:22px; font-weight:bold;">$<?php echo $total; ?></p>
+            <p style="font-size:22px; font-weight:bold;">
+                <?php echo $orderCount; ?>
+            </p>
         </div>
     </div>
 
-    <h2 style="text-align:center; margin-bottom:20px;">Sales List</h2>
+    <h2 style="text-align:center; margin-bottom:20px;">
+        Orders List
+    </h2>
 
     <table style="width:100%; border-collapse:collapse; text-align:center;">
+
         <thead>
             <tr style="background:#cfc6cf;">
                 <th style="padding:12px;">Order ID</th>
                 <th style="padding:12px;">Customer</th>
-                <th style="padding:12px;">Products</th>
-                <th style="padding:12px;">Total</th>
                 <th style="padding:12px;">Date</th>
             </tr>
         </thead>
 
         <tbody>
-            <?php foreach ($sales as $sale): ?>
-                <tr style="border-bottom:1px solid #ddd;">
-                    <td style="padding:12px;"><?php echo $sale['id']; ?></td>
-                    <td style="padding:12px;"><?php echo htmlspecialchars($sale['customer']); ?></td>
-                    <td style="padding:12px;">
-                        <?php foreach ($sale['items'] as $item): ?>
-                            <?php echo htmlspecialchars($item['name']); ?>
-                            ($<?php echo $item['price']; ?>)<br>
-                        <?php endforeach; ?>
+
+            <?php if (!empty($orders)): ?>
+
+                <?php foreach ($orders as $order): ?>
+
+                    <tr style="border-bottom:1px solid #ddd;">
+
+                        <td style="padding:12px;">
+                            <?php echo htmlspecialchars($order['id']); ?>
+                        </td>
+
+                        <td style="padding:12px;">
+                            <?php echo htmlspecialchars($order['customer']); ?>
+                        </td>
+
+                        <td style="padding:12px;">
+                            <?php echo htmlspecialchars($order['date']); ?>
+                        </td>
+
+                    </tr>
+
+                <?php endforeach; ?>
+
+            <?php else: ?>
+
+                <tr>
+                    <td colspan="3" style="padding:20px;">
+                        No orders yet.
                     </td>
-                    <td style="padding:12px;">$<?php echo $sale['total']; ?></td>
-                    <td style="padding:12px;"><?php echo $sale['date']; ?></td>
                 </tr>
-            <?php endforeach; ?>
+
+            <?php endif; ?>
+
         </tbody>
+
     </table>
+
 </section>
 
 <?php include '../includes/footer.php'; ?>
