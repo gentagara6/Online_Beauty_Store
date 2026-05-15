@@ -1,9 +1,17 @@
-<?php include '../includes/header.php'; 
+<?php 
+session_start();
+
+include '../includes/header.php'; 
 
 $statusMessage = "";
 $statusType = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    if(!isset($_SESSION['user'])){
+        $statusMessage = "You must be logged in to send a message.";
+        $statusType = "error";
+    } else {
 
     $name = trim($_POST["name"]);
     $email = trim($_POST["email"]);
@@ -31,10 +39,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $statusType = "error";
     }
     else {
+        $content =
+                "Name: $name\n" .
+                "Email: $email\n" .
+                "Subject: $subject\n" .
+                "Message: $message\n" .
+                "-------------------\n";
+
+            file_put_contents("../messages.txt", $content, FILE_APPEND);
+
         $statusMessage = "Message sent successfully";
         $statusType = "success";
     }
+    }
 }
+
 ?>
 
     <section  id="page-header" class="contact-header">

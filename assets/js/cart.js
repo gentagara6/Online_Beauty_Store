@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     body.addEventListener("click", e => {
-        if (e.target.tagName === "BUTTON") {
+        if (e.target.classList.contains("remove-btn")) {
             localStorage.removeItem(e.target.dataset.k);
             render();
         }

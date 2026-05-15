@@ -34,6 +34,10 @@ $users = [
     ]
 ];
 
+if(isset($_SESSION['registered_users'])){
+    $users = array_merge($users, $_SESSION['registered_users']);
+}
+
 if (isset($_POST['btnLogin'])) {
 
     $email = $_POST['email'];

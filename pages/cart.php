@@ -16,6 +16,21 @@ setcookie("last_cart_visit", date("Y-m-d H:i:s"), time() + (86400 * 30), "/");
 
 include '../includes/header.php'; ?>
 
+<?php if (isset($_SESSION['order_error'])): ?>
+    <p style="color:red; font-weight:bold; text-align:center;">
+        <?php echo $_SESSION['order_error']; ?>
+    </p>
+    <?php unset($_SESSION['order_error']); ?>
+<?php endif; ?>
+
+<?php if (isset($_SESSION['order_success'])): ?>
+    <p style="color:green; font-weight:bold; text-align:center;">
+        <?php echo $_SESSION['order_success']; ?>
+    </p>
+    <?php unset($_SESSION['order_success']); ?>
+<?php endif; ?>
+
+
 <section  id="page-header" class="cart-header">
     <h2>#cart</h2>
     <p>Free shipping on orders over $50</p>
@@ -39,7 +54,10 @@ include '../includes/header.php'; ?>
         <h3> Total: <span id="cart-total" style="font-weight: bolder; font-size: smaller;">$0.00</span></h3>
         
     </div>
-    <button id="orderNow">Order Now</button>
+    <form action="place-order.php" method="POST">
+        <button type="submit" id="orderNow">Order Now</button>
+    </form>
+    </form>
 </section>
 
 <section id="newsletter" class="container">
