@@ -20,6 +20,10 @@ session_start();
             <p id="login-message" style="color:red;">
                 Invalid email format.
             </p>
+        <?php elseif ($_GET['res'] == "signup_success"): ?>
+        <p id="login-message" style="color:green;">
+            Signup successful. You can now login.
+        </p>
         <?php endif; ?>
 
         <script>
@@ -49,6 +53,11 @@ session_start();
         >
         <button type="submit" name="btnLogin" class="normal">Login</button>
     </form>
+
+    <p>
+    Don't have an account?
+    <a href="signup.php">Signup here</a>
+</p>
 </section>
 
 <?php include '../includes/footer.php'; ?>

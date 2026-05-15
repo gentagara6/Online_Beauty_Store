@@ -6,17 +6,17 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] != 'admin') {
     exit;
 }
 
-$sales = [
-    ["id"=>1, "product"=>"Lip Tint", "customer"=>"Ernesa", "price"=>20],
-    ["id"=>2, "product"=>"Cleanser", "customer"=>"Genta", "price"=>25],
-    ["id"=>3, "product"=>"Barrier Cream", "customer"=>"Ermira", "price"=>30],
-    ["id"=>4, "product"=>"Glazing Milk", "customer"=>"Enesa", "price"=>32],
-    ["id"=>5, "product"=>"Peptide Fluid", "customer"=>"Era", "price"=>32]
-];
+$file = "../orders.json";
+$sales = [];
+
+if (file_exists($file)) {
+    $sales = json_decode(file_get_contents($file), true);
+}
 
 $total = 0;
+
 foreach ($sales as $sale) {
-    $total += $sale['price'];
+    $total += $sale['total'];
 }
 
 $orderCount = count($sales);
@@ -48,9 +48,10 @@ $orderCount = count($sales);
         <thead>
             <tr style="background:#cfc6cf;">
                 <th style="padding:12px;">Order ID</th>
-                <th style="padding:12px;">Product</th>
                 <th style="padding:12px;">Customer</th>
-                <th style="padding:12px;">Price</th>
+                <th style="padding:12px;">Products</th>
+                <th style="padding:12px;">Total</th>
+                <th style="padding:12px;">Date</th>
             </tr>
         </thead>
 
@@ -58,9 +59,15 @@ $orderCount = count($sales);
             <?php foreach ($sales as $sale): ?>
                 <tr style="border-bottom:1px solid #ddd;">
                     <td style="padding:12px;"><?php echo $sale['id']; ?></td>
-                    <td style="padding:12px;"><?php echo htmlspecialchars($sale['product']); ?></td>
                     <td style="padding:12px;"><?php echo htmlspecialchars($sale['customer']); ?></td>
-                    <td style="padding:12px;">$<?php echo $sale['price']; ?></td>
+                    <td style="padding:12px;">
+                        <?php foreach ($sale['items'] as $item): ?>
+                            <?php echo htmlspecialchars($item['name']); ?>
+                            ($<?php echo $item['price']; ?>)<br>
+                        <?php endforeach; ?>
+                    </td>
+                    <td style="padding:12px;">$<?php echo $sale['total']; ?></td>
+                    <td style="padding:12px;"><?php echo $sale['date']; ?></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>

@@ -1,8 +1,13 @@
 <?php
 session_start();
 
-session_unset();
-session_destroy();
+$registeredUsers = $_SESSION['registered_users'] ?? [];
+
+unset($_SESSION['user']);
+unset($_SESSION['response']);
+unset($_SESSION['last_login']);
+
+$_SESSION['registered_users'] = $registeredUsers;
 
 setcookie("welcomeUser", "", time() - 3600, "/");
 setcookie("loggedUser", "", time() - 3600, "/");

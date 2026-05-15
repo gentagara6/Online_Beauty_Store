@@ -35,7 +35,20 @@
 <script src="../assets/js/main.js"></script>
 <script src="../assets/js/login.js"></script>
 <script src="../assets/js/cart.js"></script>
-<!-- <script src="../assets/js/sproducts.js"></script> -->
+
+<script>
+function sendCartToPHP() {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    if (cart.length === 0) {
+        alert("Cart is empty.");
+        return false;
+    }
+
+    document.getElementById("cart_data").value = JSON.stringify(cart);
+    return true;
+}
+</script>
 
 </body>
 </html>
